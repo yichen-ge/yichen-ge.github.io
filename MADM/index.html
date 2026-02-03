@@ -1,218 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
-  <meta name="description" content="MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.">
-  <meta name="keywords" content="text-to-motion, Mamba, autoregressive diffusion, motion generation, computer vision, deep learning, human motion">
-  <meta name="author" content="Liping Zhu, Yichen Ge, Chengyang Li, Jian Gao, Xiaojie Lin">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="College of Artificial Intelligence, China University of Petroleum (Beijing)">
-  <meta property="og:title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
-  <meta property="og:description" content="MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.">
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/MADM">
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="MADM - Research Preview">
-  <meta property="article:published_time" content="2025-01-26T00:00:00.000Z">
-  <meta property="article:author" content="Liping Zhu">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="text-to-motion">
-  <meta property="article:tag" content="Mamba">
-  <meta property="article:tag" content="autoregressive diffusion">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@CUP_AI">
-  <meta name="twitter:creator" content="@CUP_AI">
-  <meta name="twitter:title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
-  <meta name="twitter:description" content="MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.">
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="MADM - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
-  <meta name="citation_author" content="Zhu, Liping">
-  <meta name="citation_author" content="Ge, Yichen">
-  <meta name="citation_author" content="Li, Chengyang">
-  <meta name="citation_author" content="Gao, Jian">
-  <meta name="citation_author" content="Lin, Xiaojie">
-  <meta name="citation_publication_date" content="2025">
-  <meta name="citation_conference_title" content="Under Review">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
-
-
-  <title>MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation</title>
-  
-  <!-- Favicon and App Icons -->
-  <!-- Using GitHub icon as favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23181717'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E">
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23181717'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E">
-  
-  <!-- Critical CSS - Load synchronously -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
-  
-  <!-- Structured Data for Academic Papers -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    "headline": "MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation",
-    "description": "MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.",
-    "author": [
-      {
-        "@type": "Person",
-        "name": "Liping Zhu",
-        "email": "zhuliping@cup.edu.cn",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Yichen Ge",
-        "email": "2024216101@student.cup.edu.cn",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Chengyang Li",
-        "email": "cyangli@cup.edu.cn",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Jian Gao",
-        "email": "2024216038@student.cup.edu.cn",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
-        }
-      },
-      {
-        "@type": "Person",
-        "name": "Xiaojie Lin",
-        "email": "2024216103@student.cup.edu.cn",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
-        }
-      }
-    ],
-    "datePublished": "2025-01-26",
-    "publisher": {
-      "@type": "Organization",
-      "name": "Under Review"
-    },
-    "url": "https://YOUR_DOMAIN.com/MADM",
-    "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
-    "keywords": ["text-to-motion", "Mamba", "autoregressive diffusion", "motion generation", "computer vision", "deep learning"],
-    "abstract": "Generating human motion from text presents three primary challenges. First, human motion sequences frequently exceed 100 frames, making long-sequence modeling computationally inefficient and demanding. Second, the complex many-to-many mapping between language and motion complicates precise semantic alignment. Third, achieving global consistency alone does not ensure local spatial-temporal dependencies, resulting in motions that lack local smoothness and realistic spatial structure. To address these challenges, we propose a Mamba-based autoregressive diffusion model (MADM). First, we devise a token reordering strategy into Mamba to construct Masked Autoregressive Mamba, enabling efficient bidirectional context modeling under the masked autoregressive paradigm. Second, we design a Semantic-Aware Spatial Augmentation module that fuses textual semantics with motion features and employs lightweight convolutions to capture short-term dependencies, thereby enhancing semantic alignment, spatial awareness, and local smoothness. Finally, we incorporate a Diffusion Head into the autoregressive framework, allowing MADM to directly model the continuous motion space and avoid the vector quantization loss. Experimental results on the HumanML3D and KIT-ML datasets demonstrate that MADM achieves state-of-the-art performance. On HumanML3D, it attains a Top-1 score of 0.514 and an FID of 0.052, highlighting its advantages in motion quality and semantic alignment.",
-    "citation": "@article{zhu2025madm,\n  title={MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation},\n  author={Zhu, Liping and Ge, Yichen and Li, Chengyang and Gao, Jian and Lin, Xiaojie},\n  journal={Under Review},\n  year={2025}\n}",
-    "isAccessibleForFree": true,
-    "license": "https://creativecommons.org/licenses/by/4.0/",
-    "mainEntity": {
-      "@type": "WebPage",
-      "@id": "https://YOUR_DOMAIN.com/MADM"
-    },
-    "about": [
-      {
-        "@type": "Thing",
-        "name": "Text-to-Motion Generation"
-      },
-      {
-        "@type": "Thing", 
-        "name": "Deep Learning"
-      },
-      {
-        "@type": "Thing",
-        "name": "Computer Vision"
-      }
-    ]
-  }
-  </script>
-  
-  <!-- Website/Organization Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)",
-    "url": "https://www.cup.edu.cn",
-    "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Beijing",
-      "postalCode": "102249",
-      "addressCountry": "China"
-    }
-  }
-  </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Primary Meta Tags -->
+	<meta name="title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
+	<meta name="description" content="MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.">
+	<meta name="keywords" content="text-to-motion, Mamba, autoregressive diffusion, motion generation, computer vision, deep learning, human motion">
+	<meta name="author" content="Liping Zhu, Yichen Ge, Chengyang Li, Jian Gao, Xiaojie Lin">
+	<meta name="robots" content="index, follow">
+	<meta name="language" content="English">
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="article">
+	<meta property="og:site_name" content="College of Artificial Intelligence, China University of Petroleum (Beijing)">
+	<meta property="og:title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
+	<meta property="og:description" content="MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.">
+	<meta property="og:url" content="https://YOUR_DOMAIN.com/MADM">
+	<meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<meta property="og:image:alt" content="MADM - Research Preview">
+	<meta property="article:published_time" content="2025-01-26T00:00:00.000Z">
+	<meta property="article:author" content="Liping Zhu">
+	<meta property="article:section" content="Research">
+	<meta property="article:tag" content="text-to-motion">
+	<meta property="article:tag" content="Mamba">
+	<meta property="article:tag" content="autoregressive diffusion">
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@CUP_AI">
+	<meta name="twitter:creator" content="@CUP_AI">
+	<meta name="twitter:title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
+	<meta name="twitter:description" content="MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.">
+	<meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
+	<meta name="twitter:image:alt" content="MADM - Research Preview">
+	<!-- Academic/Research Specific -->
+	<meta name="citation_title" content="MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation">
+	<meta name="citation_author" content="Zhu, Liping">
+	<meta name="citation_author" content="Ge, Yichen">
+	<meta name="citation_author" content="Li, Chengyang">
+	<meta name="citation_author" content="Gao, Jian">
+	<meta name="citation_author" content="Lin, Xiaojie">
+	<meta name="citation_publication_date" content="2025">
+	<meta name="citation_conference_title" content="Under Review">
+	<meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
+	<!-- Additional SEO -->
+	<meta name="theme-color" content="#2563eb">
+	<meta name="msapplication-TileColor" content="#2563eb">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<!-- Preconnect for performance -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="preconnect" href="https://ajax.googleapis.com">
+	<link rel="preconnect" href="https://documentcloud.adobe.com">
+	<link rel="preconnect" href="https://cdn.jsdelivr.net">
+	<title>MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation</title>
+	<!-- Favicon and App Icons -->
+	<!-- Using GitHub icon as favicon -->
+	<link rel="icon" type="image/svg+xml"
+		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23181717'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E">
+	<link rel="apple-touch-icon"
+		href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23181717'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E">
+	<!-- Critical CSS - Load synchronously -->
+	<link rel="stylesheet" href="static/css/bulma.min.css">
+	<link rel="stylesheet" href="static/css/index.css">
+	<!-- Non-critical CSS - Load asynchronously -->
+	<link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<!-- Fallback for browsers that don't support preload -->
+	<noscript>
+		<link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+		<link rel="stylesheet" href="static/css/bulma-slider.min.css">
+		<link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	</noscript>
+	<!-- Fonts - Optimized loading -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+	<!-- Defer non-critical JavaScript -->
+	<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+	<script defer src="static/js/fontawesome.all.min.js"></script>
+	<script defer src="static/js/bulma-carousel.min.js"></script>
+	<script defer src="static/js/bulma-slider.min.js"></script>
+	<script defer src="static/js/index.js"></script>
+	<!-- Structured Data for Academic Papers -->
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "ScholarlyArticle",
+		  "headline": "MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation",
+		  "description": "MADM: A Mamba-based autoregressive diffusion model for efficient text-to-motion generation with Masked Autoregressive Mamba, Semantic-Aware Spatial Augmentation, and Diffusion Head.",
+		  "author": [
+		    {
+		      "@type": "Person",
+		      "name": "Liping Zhu",
+		      "email": "zhuliping@cup.edu.cn",
+		      "affiliation": {
+		        "@type": "Organization",
+		        "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
+		      }
+		    },
+		    {
+		      "@type": "Person",
+		      "name": "Yichen Ge",
+		      "email": "2024216101@student.cup.edu.cn",
+		      "affiliation": {
+		        "@type": "Organization",
+		        "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
+		      }
+		    },
+		    {
+		      "@type": "Person",
+		      "name": "Chengyang Li",
+		      "email": "cyangli@cup.edu.cn",
+		      "affiliation": {
+		        "@type": "Organization",
+		        "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
+		      }
+		    },
+		    {
+		      "@type": "Person",
+		      "name": "Jian Gao",
+		      "email": "2024216038@student.cup.edu.cn",
+		      "affiliation": {
+		        "@type": "Organization",
+		        "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
+		      }
+		    },
+		    {
+		      "@type": "Person",
+		      "name": "Xiaojie Lin",
+		      "email": "2024216103@student.cup.edu.cn",
+		      "affiliation": {
+		        "@type": "Organization",
+		        "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)"
+		      }
+		    }
+		  ],
+		  "datePublished": "2025-01-26",
+		  "publisher": {
+		    "@type": "Organization",
+		    "name": "Under Review"
+		  },
+		  "url": "https://YOUR_DOMAIN.com/MADM",
+		  "image": "https://YOUR_DOMAIN.com/static/images/social_preview.png",
+		  "keywords": ["text-to-motion", "Mamba", "autoregressive diffusion", "motion generation", "computer vision", "deep learning"],
+		  "abstract": "Generating human motion from text presents three primary challenges. First, human motion sequences frequently exceed 100 frames, making long-sequence modeling computationally inefficient and demanding. Second, the complex many-to-many mapping between language and motion complicates precise semantic alignment. Third, achieving global consistency alone does not ensure local spatial-temporal dependencies, resulting in motions that lack local smoothness and realistic spatial structure. To address these challenges, we propose a Mamba-based autoregressive diffusion model (MADM). First, we devise a token reordering strategy into Mamba to construct Masked Autoregressive Mamba, enabling efficient bidirectional context modeling under the masked autoregressive paradigm. Second, we design a Semantic-Aware Spatial Augmentation module that fuses textual semantics with motion features and employs lightweight convolutions to capture short-term dependencies, thereby enhancing semantic alignment, spatial awareness, and local smoothness. Finally, we incorporate a Diffusion Head into the autoregressive framework, allowing MADM to directly model the continuous motion space and avoid the vector quantization loss. Experimental results on the HumanML3D and KIT-ML datasets demonstrate that MADM achieves state-of-the-art performance. On HumanML3D, it attains a Top-1 score of 0.514 and an FID of 0.052, highlighting its advantages in motion quality and semantic alignment.",
+		  "citation": "@article{zhu2025madm,\n  title={MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation},\n  author={Zhu, Liping and Ge, Yichen and Li, Chengyang and Gao, Jian and Lin, Xiaojie},\n  journal={Under Review},\n  year={2025}\n}",
+		  "isAccessibleForFree": true,
+		  "license": "https://creativecommons.org/licenses/by/4.0/",
+		  "mainEntity": {
+		    "@type": "WebPage",
+		    "@id": "https://YOUR_DOMAIN.com/MADM"
+		  },
+		  "about": [
+		    {
+		      "@type": "Thing",
+		      "name": "Text-to-Motion Generation"
+		    },
+		    {
+		      "@type": "Thing", 
+		      "name": "Deep Learning"
+		    },
+		    {
+		      "@type": "Thing",
+		      "name": "Computer Vision"
+		    }
+		  ]
+		}
+	</script>
+	<!-- Website/Organization Structured Data -->
+	<script type="application/ld+json">
+		{
+		  "@context": "https://schema.org",
+		  "@type": "Organization",
+		  "name": "College of Artificial Intelligence, China University of Petroleum (Beijing)",
+		  "url": "https://www.cup.edu.cn",
+		  "logo": "https://YOUR_DOMAIN.com/static/images/favicon.ico",
+		  "address": {
+		    "@type": "PostalAddress",
+		    "addressLocality": "Beijing",
+		    "postalCode": "102249",
+		    "addressCountry": "China"
+		  }
+		}
+	</script>
 </head>
 <body>
-
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown -->
-  <!-- <div class="more-works-container">
+	<!-- Scroll to Top Button -->
+	<button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+		<i class="fas fa-chevron-up"></i>
+	</button>
+	<!-- More Works Dropdown -->
+	<!-- <div class="more-works-container">
     <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
       <i class="fas fa-flask"></i>
       More Works
@@ -236,58 +219,53 @@
       </div>
     </div>
   </div> -->
-
-  <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation</h1>
-            <div class="is-size-5 publication-authors">
-              <span class="author-block">
-                <a href="mailto:zhuliping@cup.edu.cn">Liping Zhu</a><sup>1</sup>,</span>
-                <span class="author-block">
-                  <a href="mailto:2024216101@student.cup.edu.cn">Yichen Ge</a><sup>1,*</sup>,</span>
-                  <span class="author-block">
-                    <a href="mailto:cyangli@cup.edu.cn">Chengyang Li</a><sup>1,*</sup>,</span>
-                  <span class="author-block">
-                    <a href="mailto:2024216038@student.cup.edu.cn">Jian Gao</a><sup>1</sup>,</span>
-                  <span class="author-block">
-                    <a href="mailto:2024216103@student.cup.edu.cn">Xiaojie Lin</a><sup>1</sup>
-                  </span>
-                  </div>
-
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block"><sup>1</sup>College of Artificial Intelligence, China University of Petroleum (Beijing)</span>
-                    <br><small style="color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem; display: block;"><sup>*</sup>Equal Contribution</small>
-                    <!-- <br><small style="color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem; display: block;">Code will be open-sourced upon acceptance</small> -->
-                    <!-- <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span> -->
-                    <!-- <br><span class="badge" style="margin-top: 0.5rem;">Submitted to Pattern Recognition</span> -->
-                    <!-- <br><small style="color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem; display: block;">Code will be open-sourced upon acceptance</small> -->
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                      <span class="link-block">
-                        <a href="#" onclick="alert('Paper coming soon! The paper is currently under review.')" class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper <span class="badge" style="margin-left: 0.5rem; font-size: 0.9rem;">Submitted to Pattern Recognition</span></span>
-                      </a>
-                    </span>
-
-                    <span class="link-block">
-                      <a href="#" onclick="alert('Code coming soon! We will release the code after the paper is accepted.')" class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code <span class="badge" style="margin-left: 0.5rem; font-size: 0.9rem;">Code will be open-sourced upon acceptance</span></span>
-                    </a>
-                  </span>
-
-                  <!-- <span class="link-block">
+	<main id="main-content">
+		<section class="hero">
+			<div class="hero-body">
+				<div class="container is-max-desktop">
+					<div class="columns is-centered">
+						<div class="column has-text-centered">
+							<h1 class="title is-1 publication-title">MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation</h1>
+							<div class="is-size-5 publication-authors">
+								<span class="author-block">
+									<a href="mailto:zhuliping@cup.edu.cn">Liping Zhu</a><sup>1</sup>,</span>
+								<span class="author-block">
+									<a href="mailto:2024216101@student.cup.edu.cn">Yichen Ge</a><sup>1,*</sup>,</span>
+								<span class="author-block">
+									<a href="mailto:cyangli@cup.edu.cn">Chengyang Li</a><sup>1,*</sup>,</span>
+								<span class="author-block">
+									<a href="mailto:2024216038@student.cup.edu.cn">Jian Gao</a><sup>1</sup>,</span>
+								<span class="author-block">
+									<a href="mailto:2024216103@student.cup.edu.cn">Xiaojie Lin</a><sup>1</sup>
+								</span>
+							</div>
+							<div class="is-size-5 publication-authors">
+								<span class="author-block"><sup>1</sup>College of Artificial Intelligence, China University of Petroleum (Beijing)</span>
+								<br><small style="color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem; display: block;"><sup>*</sup>Equal Contribution</small>
+								<!-- <br><small style="color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem; display: block;">Code will be open-sourced upon acceptance</small> -->
+								<!-- <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span> -->
+								<!-- <br><span class="badge" style="margin-top: 0.5rem;">Submitted to Pattern Recognition</span> -->
+								<!-- <br><small style="color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem; display: block;">Code will be open-sourced upon acceptance</small> -->
+							</div>
+							<div class="column has-text-centered">
+								<div class="publication-links">
+									<span class="link-block">
+										<a href="#" onclick="alert('Paper coming soon! The paper is currently under review.')" class="external-link button is-normal is-rounded is-dark">
+											<span class="icon">
+												<i class="fas fa-file-pdf"></i>
+											</span>
+											<span>Paper <span class="badge" style="margin-left: 0.5rem; font-size: 0.9rem;">Submitted to Pattern Recognition</span></span>
+										</a>
+									</span>
+									<span class="link-block">
+										<a href="#" onclick="alert('Code coming soon! We will release the code after the paper is accepted.')" class="external-link button is-normal is-rounded is-dark">
+											<span class="icon">
+												<i class="fab fa-github"></i>
+											</span>
+											<span>Code <span class="badge" style="margin-left: 0.5rem; font-size: 0.9rem;">Code will be open-sourced upon acceptance</span></span>
+										</a>
+									</span>
+									<!-- <span class="link-block">
                     <a href="#" onclick="alert('arXiv link coming soon! We will upload the paper to arXiv after the review process.')" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -295,86 +273,219 @@
                     <span>arXiv <span class="badge" style="margin-left: 0.5rem; font-size: 0.7rem;">Coming Soon</span></span>
                   </a>
                 </span> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Teaser video-->
-<!-- <section class="hero teaser"> -->
-  <!-- <div class="container is-max-desktop"> -->
-    <!-- <div class="hero-body"> -->
-      <!-- TODO: Replace with your teaser video -->
-      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata"> -->
-        <!-- TODO: Add your video file path here -->
-        <!-- <source src="static/images/overview.pdf" type="image/pdf"> -->
-      <!-- </video> -->
-      <!-- TODO: Replace with your video description -->
-      <!-- <h2 class="subtitle has-text-centered"> -->
-        <!-- MADM generates diverse and realistic human motions from text descriptions, achieving state-of-the-art performance on HumanML3D and KIT-ML datasets. -->
-      <!-- </h2> -->
-    <!-- </div> -->
-  <!-- </div> -->
-<!-- </section> -->
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Generating human motion from text presents three primary challenges. First, human motion sequences frequently exceed 100 frames, making long-sequence modeling computationally inefficient and demanding. Second, the complex many-to-many mapping between language and motion complicates precise semantic alignment. Third, achieving global consistency alone does not ensure local spatial-temporal dependencies, resulting in motions that lack local smoothness and realistic spatial structure. To address these challenges, we propose a Mamba-based autoregressive diffusion model (MADM). First, we devise a token reordering strategy into Mamba to construct Masked Autoregressive Mamba, enabling efficient bidirectional context modeling under the masked autoregressive paradigm. Second, we design a Semantic-Aware Spatial Augmentation module that fuses textual semantics with motion features and employs lightweight convolutions to capture short-term dependencies, thereby enhancing semantic alignment, spatial awareness, and local smoothness. Finally, we incorporate a Diffusion Head into the autoregressive framework, allowing MADM to directly model the continuous motion space and avoid the vector quantization loss. Experimental results on the HumanML3D and KIT-ML datasets demonstrate that MADM achieves state-of-the-art performance. On HumanML3D, it attains a Top-1 score of 0.514 and an FID of 0.052, highlighting its advantages in motion quality and semantic alignment.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
-
-
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Quantitative Results</h2>
-        <div class="content has-text-justified">
-          <p>
-            We compare MADM with state-of-the-art methods on the HumanML3D dataset. 
-            As shown in the chart below, our model achieves a superior trade-off between motion quality (FID) and semantic alignment (Top-1 Precision).
-          </p>
-        </div>
-        
-        <div class="box" style="background-color: #ffffff; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-top: 1.5rem; box-shadow: var(--shadow-sm);">
-          <img src="static/images/FID_Top1.png" 
-               alt="Quantitative results comparison" 
-               style="width: 100%; max-width: 450px; height: auto; object-fit: contain;" />
-          <p class="is-size-6 has-text-grey" style="margin-top: 1rem;">
-            <b>Figure 1.</b> Performance comparison on HumanML3D. 
-            <span style="color: var(--primary-color); font-weight: bold;">MADM (Ours)</span> outperforms existing diffusion and autoregressive models, achieving the lowest FID (0.052) and competitive R-Precision.
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- Image carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Method</h2>
-      <div id="video-carousel" class="carousel results-carousel">
-       <!-- <div class="item card-hover">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Teaser video-->
+		<!-- <section class="hero teaser"> -->
+		<!-- <div class="container is-max-desktop"> -->
+		<!-- <div class="hero-body"> -->
+		<!-- TODO: Replace with your teaser video -->
+		<!-- <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata"> -->
+		<!-- TODO: Add your video file path here -->
+		<!-- <source src="static/images/overview.pdf" type="image/pdf"> -->
+		<!-- </video> -->
+		<!-- TODO: Replace with your video description -->
+		<!-- <h2 class="subtitle has-text-centered"> -->
+		<!-- MADM generates diverse and realistic human motions from text descriptions, achieving state-of-the-art performance on HumanML3D and KIT-ML datasets. -->
+		<!-- </h2> -->
+		<!-- </div> -->
+		<!-- </div> -->
+		<!-- </section> -->
+		<!-- End teaser video -->
+		<!-- Paper abstract -->
+		<section class="section hero is-light">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<h2 class="title is-3">Abstract</h2>
+						<div class="content has-text-justified">
+							<p> Generating human motion from text presents three primary challenges. First, human motion sequences frequently exceed 100 frames, making long-sequence modeling computationally inefficient and demanding. Second, the complex many-to-many mapping between language and
+								motion complicates precise semantic alignment. Third, achieving global consistency alone does not ensure local spatial-temporal dependencies, resulting in motions that lack local smoothness and realistic spatial structure. To address these challenges, we propose a
+								Mamba-based autoregressive diffusion model (MADM). First, we devise a token reordering strategy into Mamba to construct Masked Autoregressive Mamba, enabling efficient bidirectional context modeling under the masked autoregressive paradigm. Second, we design a
+								Semantic-Aware Spatial Augmentation module that fuses textual semantics with motion features and employs lightweight convolutions to capture short-term dependencies, thereby enhancing semantic alignment, spatial awareness, and local smoothness. Finally, we incorporate
+								a Diffusion Head into the autoregressive framework, allowing MADM to directly model the continuous motion space and avoid the vector quantization loss. Experimental results on the HumanML3D and KIT-ML datasets demonstrate that MADM achieves state-of-the-art
+								performance. On HumanML3D, it attains a Top-1 score of 0.514 and an FID of 0.052, highlighting its advantages in motion quality and semantic alignment. </p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End paper abstract -->
+		<section class="section hero is-light">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered has-text-centered">
+					<div class="column is-four-fifths">
+						<h2 class="title is-3">Performance Comparison</h2>
+						<div class="content has-text-justified">
+							<p> We compare MADM with state-of-the-art methods on the HumanML3D dataset. As shown in the chart below, our model achieves a superior trade-off between motion quality (FID) and semantic alignment (Top-1 Precision). </p>
+						</div>
+						<div class="box" style="background-color: #ffffff; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-top: 1.5rem; box-shadow: var(--shadow-sm);">
+							<img src="static/images/FID_Top1.png" alt="Quantitative results comparison" style="width: 100%; max-width: 450px; height: auto; object-fit: contain;" />
+							<p class="is-size-6 has-text-grey" style="margin-top: 1rem;">
+								MADM (Ours) outperforms existing diffusion and autoregressive models, achieving the lowest FID (0.052) and competitive R-Precision.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Image carousel -->
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container">
+					<h2 class="title is-3 has-text-centered">Method</h2>
+					<div id="video-carousel" class="carousel results-carousel">
+						<div class="item card-hover">
+							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
+								<img src="static/images/overview.png" alt="MADM architecture overview" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+							</div>
+							<h2 class="subtitle has-text-centered"> MADM Architecture </h2>
+						</div>
+						<div class="item card-hover">
+							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
+								<img src="static/images/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+							</div>
+							<h2 class="subtitle has-text-centered"> Illustration of our Masked Autoregressive Mamba (MAM) </h2>
+						</div>
+						<div class="item card-hover">
+							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
+								<img src="static/images/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+							</div>
+							<h2 class="subtitle has-text-centered"> Illustration of our Semantic-Aware Spatial Augmentation (SASA) </h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End image carousel -->
+		<section class="section hero is-light">
+			<div class="container is-max-desktop">
+				<div class="columns is-centered">
+					<div class="column is-full-width">
+						<h2 class="title is-3 has-text-centered">Text-to-Motion</h2>
+						<div class="content has-text-justified">
+							<p>
+								<center>
+									<b>Textual description:</b> a person steps forward and puts their hand up near their face.
+								</center>
+							</p>
+						</div>
+						<div class="columns is-centered">
+							<div class="column">
+								<div class="content has-text-centered">
+									<p> FineMoGen </p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/FineMoGen/finemogen_1_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div class="column">
+								<div class="content has-text-centered">
+									<p> ReMoDiffuse </p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/ReMoDiffuse/remodiffuse_1_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div class="column">
+								<div class="content has-text-centered">
+									<p>
+										<strong>Ours</strong>
+									</p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/EnergyMoGen/ours_1_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+						</div>
+						<hr class="new">
+						<div class="content has-text-justified">
+							<p>
+								<center>
+									<b>Textual description:</b> a person jogs around a small area.
+								</center>
+							</p>
+						</div>
+						<div class="columns is-centered">
+							<div class="column">
+								<div class="content has-text-centered">
+									<p> FineMoGen </p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/FineMoGen/finemogen_2_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div class="column">
+								<div class="content has-text-centered">
+									<p> ReMoDiffuse </p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/ReMoDiffuse/remodiffuse_2_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div class="column">
+								<div class="content has-text-centered">
+									<p>
+										<strong>Ours</strong>
+									</p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/EnergyMoGen/ours_2_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+						</div>
+						<hr class="new">
+						<div class="content has-text-justified">
+							<p>
+								<center>
+									<b>Textual description:</b> person is standing and jumping on one feet.
+								</center>
+							</p>
+						</div>
+						<div class="columns is-centered">
+							<div class="column">
+								<div class="content has-text-centered">
+									<p> FineMoGen </p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/FineMoGen/finemogen_3_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div class="column">
+								<div class="content has-text-centered">
+									<p> ReMoDiffuse </p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/ReMoDiffuse/remodiffuse_3_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+							<div class="column">
+								<div class="content has-text-centered">
+									<p>
+										<strong>Ours</strong>
+									</p>
+									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+										<source src="static/videos/text2motion/EnergyMoGen/ours_3_d.mp4" type="video/mp4">
+									</video>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container">
+					<h2 class="title is-3 has-text-centered">Quantitative Results</h2>
+					<div id="video-carousel" class="carousel results-carousel">
+						<!-- <div class="item card-hover">
         <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
           <img src="static/images/FID_Top1.png" alt="Performance comparison on HumanML3D using R-Precision (Top-1) and FID." loading="lazy" style="max-width: 60%; height: auto; object-fit: contain;"/>
         </div>
@@ -382,109 +493,30 @@
           Performance comparison on HumanML3D using R-Precision (Top-1) and FID.
         </h2>
       </div> -->
-      <div class="item card-hover">
-        <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-          <img src="static/images/overview.png" alt="MADM architecture overview" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;"/>
-        </div>
-        <h2 class="subtitle has-text-centered">
-          MADM Architecture
-        </h2>
-      </div>
-      <div class="item card-hover">
-        <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-          <img src="static/images/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;"/>
-        </div>
-        <h2 class="subtitle has-text-centered">
-          Illustration of our Masked Autoregressive Mamba (MAM)
-       </h2>
-     </div>
-     <div class="item card-hover">
-      <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-        <img src="static/images/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;"/>
-      </div>
-      <h2 class="subtitle has-text-centered">
-        Illustration of our Semantic-Aware Spatial Augmentation (SASA)
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <p class="has-text-centered" style="margin-bottom: 1rem; color: var(--text-secondary);"></p>
-            Video presentation coming soon! We will upload a detailed video explaining MADM after the paper is accepted.
-          </p>
-          <div class="publication-video" style="opacity: 0.5; pointer-events: none;">
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
-
-
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3 has-text-centered">Generated Motion Videos</h2>
-      <div id="motion-videos-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <div style="position: relative; overflow: hidden; border-radius: var(--border-radius);">
-            <video poster="" id="video1" controls muted loop height="100%" preload="metadata" style="width: 100%; border-radius: var(--border-radius);">
-              <source src="static/videos/0001-0052.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-            Sample 1: "A person walks forward and waves their hand"
-          </h2>
-        </div>
-        <div class="item item-video2">
-          <div style="position: relative; overflow: hidden; border-radius: var(--border-radius);">
-            <video poster="" id="video2" controls muted loop height="100%" preload="metadata" style="width: 100%; border-radius: var(--border-radius);">
-              <source src="static/videos/0001-0052.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-            Sample 2: "A person performs a jumping jack"
-          </h2>
-        </div>
-        <div class="item item-video3">
-          <div style="position: relative; overflow: hidden; border-radius: var(--border-radius);">
-            <video poster="" id="video3" controls muted loop height="100%" preload="metadata" style="width: 100%; border-radius: var(--border-radius);">
-              <source src="static/videos/0001-0052.mp4" type="video/mp4">
-            </video>
-          </div>
-          <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
-            Sample 3: "A person dances to music"
-          </h2>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- End video carousel -->
-
-
-
-
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
+						<div class="item card-hover">
+							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
+								<img src="static/images/overview.png" alt="MADM architecture overview" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+							</div>
+							<h2 class="subtitle has-text-centered"> MADM Architecture </h2>
+						</div>
+						<div class="item card-hover">
+							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
+								<img src="static/images/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+							</div>
+							<h2 class="subtitle has-text-centered"> Illustration of our Masked Autoregressive Mamba (MAM) </h2>
+						</div>
+						<div class="item card-hover">
+							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
+								<img src="static/images/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+							</div>
+							<h2 class="subtitle has-text-centered"> Illustration of our Semantic-Aware Spatial Augmentation (SASA) </h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- Paper poster -->
+		<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -501,57 +533,44 @@
       </div>
     </div>
   </section> -->
-<!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{zhu2025madm,
+		<!--End paper poster -->
+		<!--BibTex citation -->
+		<section class="section" id="BibTeX">
+			<div class="container is-max-desktop content">
+				<div class="bibtex-header">
+					<h2 class="title">BibTeX</h2>
+					<button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+						<i class="fas fa-copy"></i>
+						<span class="copy-text">Copy</span>
+					</button>
+				</div>
+				<pre id="bibtex-code"><code>@article{zhu2025madm,
   title={MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation},
   author={Zhu, Liping and Ge, Yichen and Li, Chengyang and Gao, Jian and Lin, Xiaojie},
   journal={Under Review},
   year={2025},
 }</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-          <!-- <p>
+			</div>
+		</section>
+		<!--End BibTex citation -->
+		<footer class="footer">
+			<div class="container">
+				<div class="columns is-centered">
+					<div class="column is-8">
+						<div class="content">
+							<p> This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page. You are
+								free to borrow the source code of this website, we just ask that you link back to this page in the footer. This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike
+									4.0 International License</a>. </p>
+							<!-- <p>
             <strong>Acknowledgments:</strong> We thank all the reviewers for their valuable feedback and suggestions. This work was supported by the College of Artificial Intelligence, China University of Petroleum (Beijing).
           </p> -->
-
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
-
-    <!-- End of Statcounter Code -->
-
-  </body>
-  </html>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- Statcounter tracking code -->
+		<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+		<!-- End of Statcounter Code -->
+</body>
+</html>
