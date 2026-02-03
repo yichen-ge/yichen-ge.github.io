@@ -1,0 +1,746 @@
+/* Modern CSS Variables for consistent theming */
+:root {
+  /* 核心色调：清爽明亮的蓝色 */
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --secondary-color: #64748b;
+  --accent-color: #0ea5e9;
+
+  /* 背景色调 */
+  --background-primary: #ffffff;
+  --background-secondary: #f8fafc;
+  --background-accent: #f1f5f9;
+
+  /* 渐变 */
+  --gradient-hero: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+  --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+
+  /* 文字颜色 */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-light: #94a3b8;
+
+  /* 边框和阴影 */
+  --border-color: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+  --border-radius: 12px;
+  --border-radius-lg: 16px;
+  --transition: all 0.2s ease;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* Global Styles */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #ffffff;
+  /* 非常淡的网格背景，增加微妙的层次感 */
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: -1px -1px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container.is-max-desktop {
+  position: relative;
+  z-index: 1;
+}
+
+/* Modern Button Styles */
+.button {
+  border-radius: var(--border-radius) !important;
+  font-weight: 600 !important;
+  transition: var(--transition) !important;
+  border: 2px solid transparent !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.button.is-dark {
+  background: #0f172a !important;
+  border: none !important;
+  color: white !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.button.is-dark:hover {
+  background: #334155 !important;
+  box-shadow: var(--shadow-md);
+}
+
+.button.is-rounded {
+  border: 1px solid rgba(0,0,0,0.05) !important;
+}
+
+.button.is-rounded:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* --------------------------------------------------
+   Hero Section (Top Area) - Fixes applied here
+   -------------------------------------------------- */
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero:first-child {
+  background: var(--gradient-hero);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* 标题 */
+.hero:first-child .publication-title {
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em;
+}
+
+/* 作者链接 */
+.hero:first-child .publication-authors a {
+  color: #2563eb !important;
+  position: relative;
+  text-decoration: none;
+}
+
+.hero:first-child .publication-authors a:hover {
+  color: #1d4ed8 !important;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  background: none;
+}
+
+/* --- 修复 Equal Contribution 和辅助文字看不见的问题 --- */
+.hero:first-child .author-block,
+.hero:first-child .eql-cntrb, 
+.hero:first-child small {
+  color: #64748b !important; /* 强制设为深灰色 */
+}
+
+/* 顶部按钮 */
+.hero:first-child .button.is-dark {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.hero:first-child .button.is-dark:hover {
+  background: #334155 !important;
+}
+
+/* --------------------------------------------------
+   BibTeX - Light Theme Update
+   -------------------------------------------------- */
+#BibTeX pre {
+  background: #f8fafc !important; /* 浅灰背景，不再是深黑 */
+  color: #475569 !important;      /* 深灰文字，易读 */
+  font-family: 'JetBrains Mono', 'Fira Code', monospace !important;
+  font-size: 0.9rem !important;
+  line-height: 1.6;
+  border: 1px solid #e2e8f0 !important; /* 浅色边框 */
+  border-radius: 12px !important;
+  padding: 3.5rem 1.5rem 1.5rem 1.5rem !important;
+  box-shadow: var(--shadow-sm); /* 轻微阴影 */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 窗口控制点（保留，增加设计感） */
+#BibTeX pre::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #cbd5e1; /* 改为灰色系，更低调，或者保留红黄绿 */
+  box-shadow: 
+    20px 0 0 #e2e8f0, 
+    40px 0 0 #e2e8f0; 
+  /* 如果喜欢彩色点，可以取消上面一行，用下面这行： */
+  /* background: #ff5f56; box-shadow: 20px 0 0 #ffbd2e, 40px 0 0 #27c93f; */
+}
+
+/* --------------------------------------------------
+   Standard Components
+   -------------------------------------------------- */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  box-shadow: none;
+}
+
+.badge:hover {
+  background: #e2e8f0;
+}
+
+.teaser .hero-body {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.teaser {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Abstract Card */
+.hero.is-light {
+  background: transparent !important;
+  padding: 2rem 0 !important;
+  border: none;
+}
+
+.hero.is-light .container {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--border-radius);
+  padding: 2.5rem !important;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.publication-title {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.02em !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.1 !important;
+  color: var(--text-primary);
+}
+
+.publication-banner {
+  max-height: 70vh;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+  margin: 2rem 0;
+}
+
+.publication-authors {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.publication-authors a {
+  color: var(--primary-color) !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  position: relative;
+  padding: 0 4px;
+  margin: 0 -2px;
+  border-radius: 4px;
+}
+
+.publication-authors a:hover {
+  color: var(--primary-hover) !important;
+  background-color: #f1f5f9;
+}
+
+.author-block {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+/* Video and Images */
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg) !important;
+  box-shadow: var(--shadow-lg);
+  transition: var(--transition);
+  background: #f8fafc; /* 视频未加载时的背景色 */
+}
+
+.publication-video:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+}
+
+/* Carousel */
+.results-carousel {
+  overflow: hidden;
+  padding: 1rem 0;
+}
+
+.results-carousel .item {
+  margin: 1rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  font-size: 0;
+  background: #ffffff;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-color);
+  position: relative;
+}
+
+.results-carousel .item img,
+.results-carousel video {
+  margin: 0;
+  border-radius: var(--border-radius);
+  width: 100%;
+  height: auto;
+}
+
+.results-carousel .subtitle {
+  font-size: 1rem !important;
+  color: var(--text-secondary);
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------
+   Carousel Pagination Dots - Improved Visibility
+   -------------------------------------------------- */
+.slider-pagination {
+  position: relative !important;
+  bottom: 0 !important;
+  padding: 0.8rem 1rem !important;
+  margin-top: 0.5rem !important;
+  background: transparent !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.slider-pagination .slider-page {
+  background: var(--primary-color) !important;
+  width: 12px !important;
+  height: 12px !important;
+  opacity: 0.6 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+  margin: 0 3px !important;
+}
+
+/* Ensure navigation arrows are visible */
+.slider-navigation-next,
+.slider-navigation-previous {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  z-index: 10 !important;
+  top: 45% !important;
+  transform: translateY(-50%) !important;
+}
+
+.slider-navigation-next {
+  right: 10px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+.slider-navigation-previous {
+  left: 10px !important;
+  background: rgba(255, 255, 255, 0.9) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Fix arrow visibility on hover */
+.slider-navigation-next:hover,
+.slider-navigation-previous:hover {
+  opacity: 1 !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+}
+
+.slider-pagination .slider-page:hover {
+  opacity: 0.8 !important;
+  transform: scale(1.3) !important;
+}
+
+.slider-pagination .slider-page.is-active {
+  opacity: 1 !important;
+  background: var(--primary-hover) !important;
+  transform: scale(1.4) !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Ensure carousels don't overlap */
+.carousel {
+  position: relative !important;
+  margin-bottom: 2rem !important;
+  clear: both !important;
+}
+
+.results-carousel {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Fix carousel container positioning */
+.slider {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.slider-container {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Section Titles */
+.title.is-3 {
+  font-family: 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  margin-bottom: 2rem !important;
+  position: relative;
+  padding-bottom: 1rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2rem;
+}
+
+.title.is-3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+/* Content Typography */
+.content.has-text-justified {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.content.has-text-justified p {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--border-color);
+  transition: all 0.3s;
+}
+
+.content.has-text-justified p:hover {
+  border-left-color: var(--primary-color);
+  background: linear-gradient(90deg, #f1f5f9 0%, transparent 100%);
+  padding-left: 2rem;
+}
+
+/* Footer */
+.footer {
+  background: #f8fafc;
+  border-top: 1px solid var(--border-color);
+  padding: 3rem 1.5rem;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--gradient-primary);
+  opacity: 0.5;
+}
+
+.footer .content {
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.footer a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* BibTeX Header */
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.copy-bibtex-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.copy-bibtex-btn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* More Works Dropdown */
+.more-works-container {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.more-works-btn {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+}
+
+.more-works-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-color);
+  background: #ffffff;
+}
+
+.more-works-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 400px;
+  max-width: 90vw;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: var(--transition);
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.more-works-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-header h4 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  background: #f1f5f9;
+  color: var(--text-primary);
+}
+
+.works-list {
+  padding: 1rem;
+}
+
+.work-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+  margin-bottom: 0.5rem;
+}
+
+.work-item:hover {
+  background: #f1f5f9;
+  transform: translateX(4px);
+}
+
+.work-info h5 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.work-info p {
+  margin: 0 0 0.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.work-venue {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* Utility Classes */
+.eql-cntrb {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.scroll-to-top:hover {
+  background: var(--primary-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-xl);
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media screen and (max-width: 768px) {
+  .hero-body { padding: 2rem 1rem; }
+  .publication-title { font-size: 2rem !important; }
+  .more-works-container { top: auto; bottom: 2rem; right: 1rem; }
+  .more-works-dropdown { bottom: calc(100% + 0.5rem); top: auto; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero, .section {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-light: #94a3b8;
+    --background-primary: #0f172a;
+    --background-secondary: #1e293b;
+    --background-accent: #334155;
+    --border-color: #334155;
+    
+    --gradient-hero: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
+    --gradient-card: #1e293b;
+    --gradient-primary: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+  }
+  
+  .hero.is-light .container {
+    background: rgba(30, 41, 59, 0.7);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  .more-works-btn, .more-works-dropdown {
+    background: rgba(15, 23, 42, 0.9);
+    border-color: rgba(255,255,255,0.1);
+  }
+  
+  .work-item:hover {
+    background: #334155;
+  }
+  
+  #BibTeX pre {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+    border-color: #334155 !important;
+  }
+}
