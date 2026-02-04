@@ -195,8 +195,8 @@ body {
 }
 
 .teaser .hero-body {
-  padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .teaser {
@@ -206,7 +206,7 @@ body {
 /* Abstract Card */
 .hero.is-light {
   background: transparent !important;
-  padding: 2rem 0 !important;
+  padding: 1rem 0 !important;
   border: none;
 }
 
@@ -215,9 +215,9 @@ body {
   border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   border-radius: var(--border-radius);
-  padding: 2.5rem !important;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  padding: 2.0rem !important;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .publication-title {
@@ -415,7 +415,7 @@ body {
 .title.is-3 {
   font-family: 'Inter', sans-serif !important;
   font-weight: 700 !important;
-  margin-bottom: 2rem !important;
+  margin-bottom: 0.5rem !important;
   position: relative;
   padding-bottom: 1rem;
   background: var(--gradient-primary);

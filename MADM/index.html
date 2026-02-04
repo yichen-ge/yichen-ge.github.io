@@ -194,31 +194,6 @@
 	<button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
 		<i class="fas fa-chevron-up"></i>
 	</button>
-	<!-- More Works Dropdown -->
-	<!-- <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <div class="works-list">
-        <div class="work-item" style="cursor: default;">
-          <div class="work-info">
-            <h5>More Works Coming Soon</h5>
-            <p>We will update this section with related works from our lab as they become available.</p>
-            <span class="work-venue">College of Artificial Intelligence, CUP</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
 	<main id="main-content">
 		<section class="hero">
 			<div class="hero-body">
@@ -299,17 +274,13 @@
 		<!-- End teaser video -->
 		<!-- Paper abstract -->
 		<section class="section hero is-light">
+			<h2 class="title is-3 has-text-centered">Abstract</h2>
 			<div class="container is-max-desktop">
 				<div class="columns is-centered has-text-centered">
 					<div class="column is-four-fifths">
-						<h2 class="title is-3">Abstract</h2>
+						<!-- <h2 class="title is-3">Abstract</h2> -->
 						<div class="content has-text-justified">
-							<p> Generating human motion from text presents three primary challenges. First, human motion sequences frequently exceed 100 frames, making long-sequence modeling computationally inefficient and demanding. Second, the complex many-to-many mapping between language and
-								motion complicates precise semantic alignment. Third, achieving global consistency alone does not ensure local spatial-temporal dependencies, resulting in motions that lack local smoothness and realistic spatial structure. To address these challenges, we propose a
-								Mamba-based autoregressive diffusion model (MADM). First, we devise a token reordering strategy into Mamba to construct Masked Autoregressive Mamba, enabling efficient bidirectional context modeling under the masked autoregressive paradigm. Second, we design a
-								Semantic-Aware Spatial Augmentation module that fuses textual semantics with motion features and employs lightweight convolutions to capture short-term dependencies, thereby enhancing semantic alignment, spatial awareness, and local smoothness. Finally, we incorporate
-								a Diffusion Head into the autoregressive framework, allowing MADM to directly model the continuous motion space and avoid the vector quantization loss. Experimental results on the HumanML3D and KIT-ML datasets demonstrate that MADM achieves state-of-the-art
-								performance. On HumanML3D, it attains a Top-1 score of 0.514 and an FID of 0.052, highlighting its advantages in motion quality and semantic alignment. </p>
+							<p> Generating human motion from text presents three primary challenges. First, human motion sequences often span hundreds of frames, making long-sequence modeling computationally inefficient and demanding. Second, the complex many-to-many mapping between language and motion complicates precise semantic alignment. Third, achieving global consistency alone does not ensure local spatial-temporal dependencies, resulting in motions that lack local smoothness and realistic spatial structure. To address these challenges, we propose a Mamba-based autoregressive diffusion model (MADM). First, we devise a token reordering strategy into Mamba to construct Masked Autoregressive Mamba, enabling efficient bidirectional context modeling under the masked autoregressive paradigm. Second, we design a Semantic-Aware Spatial Augmentation module that fuses textual semantics with motion features and employs lightweight convolutions to capture short-term dependencies, thereby enhancing semantic alignment, spatial awareness, and local smoothness. Finally, we incorporate a Diffusion Head into the autoregressive framework, allowing MADM to directly model the continuous motion space and avoid the vector quantization loss. Experimental results on the HumanML3D and KIT-ML datasets demonstrate that MADM achieves state-of-the-art performance with superior efficiency. On HumanML3D, it attains a Top-1 score of 0.514 and an FID of 0.052, highlighting its advantages in motion quality and semantic alignment. Notably, benefited from the linear complexity of Mamba, MADM reduces the computational cost to 5.960T FLOPs, compared to 7.131T for the Transformer baseline. </p>
 						</div>
 					</div>
 				</div>
@@ -317,10 +288,11 @@
 		</section>
 		<!-- End paper abstract -->
 		<section class="section hero is-light">
+			<h2 class="title is-3 has-text-centered">Performance Comparison</h2>
 			<div class="container is-max-desktop">
 				<div class="columns is-centered has-text-centered">
 					<div class="column is-four-fifths">
-						<h2 class="title is-3">Performance Comparison</h2>
+						<!-- <h2 class="title is-3">Performance Comparison</h2> -->
 						<div class="content has-text-justified">
 							<p> We compare MADM with state-of-the-art methods on the HumanML3D dataset. As shown in the chart below, our model achieves a superior trade-off between motion quality (FID) and semantic alignment (Top-1 Precision). </p>
 						</div>
@@ -342,53 +314,86 @@
 					<div id="video-carousel" class="carousel results-carousel">
 						<div class="item card-hover">
 							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-								<img src="static/images/overview.png" alt="MADM architecture overview" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+								<img src="static/images/method/overview.png" alt="MADM architecture overview" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
 							</div>
 							<h2 class="subtitle has-text-centered"> MADM Architecture </h2>
 						</div>
 						<div class="item card-hover">
 							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-								<img src="static/images/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+								<img src="static/images/method/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
 							</div>
 							<h2 class="subtitle has-text-centered"> Illustration of our Masked Autoregressive Mamba (MAM) </h2>
 						</div>
 						<div class="item card-hover">
 							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-								<img src="static/images/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+								<img src="static/images/method/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
 							</div>
 							<h2 class="subtitle has-text-centered"> Illustration of our Semantic-Aware Spatial Augmentation (SASA) </h2>
 						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="hero is-small">
+			<div class="hero-body">
+				<div class="container">
+					<h2 class="title is-3 has-text-centered">Text-to-Motion</h2>
+					<div id="video-carousel" class="carousel results-carousel">
+						<div class="item card-hover">
+							<video id="dollyzoom" autoplay controls muted loop playsinline 
+								style="width: 100%; max-width: 600px; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+								<source src="static/videos/t2m/chacha.mp4" type="video/mp4">
+							</video>
+							<h2 class="subtitle has-text-centered" style="margin-top: 1rem;"> the man dances the cha cha. </h2>
+						</div>
+						<div class="item card-hover">
+							<video id="dollyzoom" autoplay controls muted loop playsinline 
+								style="width: 100%; max-width: 600px; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+								<source src="static/videos/t2m/backwards.mp4" type="video/mp4">
+							</video>
+							<h2 class="subtitle has-text-centered" style="margin-top: 1rem;"> a person walks backwards several steps. </h2>
+						</div>
+						<div class="item card-hover">
+							<video id="dollyzoom" autoplay controls muted loop playsinline 
+								style="width: 100%; max-width: 600px; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+								<source src="static/videos/t2m/push.mp4" type="video/mp4">
+							</video>
+							<h2 class="subtitle has-text-centered" style="margin-top: 1rem;"> the person moves backwards as if pushed by someone in front of them. </h2>
+						</div>
+					</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- End image carousel -->
 		<section class="section hero is-light">
+			<h2 class="title is-3 has-text-centered">Qualitative Results</h2> 
 			<div class="container is-max-desktop">
 				<div class="columns is-centered">
 					<div class="column is-full-width">
-						<h2 class="title is-3 has-text-centered">Text-to-Motion</h2>
+						<!-- <h2 class="title is-3 has-text-centered">Text-to-Motion</h2> -->
 						<div class="content has-text-justified">
 							<p>
 								<center>
-									<b>Textual description:</b> a person steps forward and puts their hand up near their face.
+									<b>Text:</b> a person plays a violin with their right hand in the air and their left hand holding the bow.
 								</center>
 							</p>
 						</div>
 						<div class="columns is-centered">
 							<div class="column">
 								<div class="content has-text-centered">
-									<p> FineMoGen </p>
+									<p> Momask </p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/FineMoGen/finemogen_1_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/momask_violin.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
 							<div class="column">
 								<div class="content has-text-centered">
-									<p> ReMoDiffuse </p>
+									<p> MARDM </p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/ReMoDiffuse/remodiffuse_1_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/mardm_violin.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
@@ -398,7 +403,7 @@
 										<strong>Ours</strong>
 									</p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/EnergyMoGen/ours_1_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/madm_violin.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
@@ -407,24 +412,24 @@
 						<div class="content has-text-justified">
 							<p>
 								<center>
-									<b>Textual description:</b> a person jogs around a small area.
+									<b>Text:</b> caption:a man walks forward a few steps, raises his left hand to his face, then continues walking in a circle.
 								</center>
 							</p>
 						</div>
 						<div class="columns is-centered">
 							<div class="column">
 								<div class="content has-text-centered">
-									<p> FineMoGen </p>
+									<p> Momask </p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/FineMoGen/finemogen_2_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/momask_walklefthand.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
 							<div class="column">
 								<div class="content has-text-centered">
-									<p> ReMoDiffuse </p>
+									<p> MARDM </p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/ReMoDiffuse/remodiffuse_2_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/mardm_walklefthand.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
@@ -434,7 +439,7 @@
 										<strong>Ours</strong>
 									</p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/EnergyMoGen/ours_2_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/madm_walklefthand.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
@@ -443,24 +448,24 @@
 						<div class="content has-text-justified">
 							<p>
 								<center>
-									<b>Textual description:</b> person is standing and jumping on one feet.
+									<b>Text:</b> the person paces to his left, then to his right, and finally to his left again.
 								</center>
 							</p>
 						</div>
 						<div class="columns is-centered">
 							<div class="column">
 								<div class="content has-text-centered">
-									<p> FineMoGen </p>
+									<p> Momask </p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/FineMoGen/finemogen_3_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/momask_leftrightleft.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
 							<div class="column">
 								<div class="content has-text-centered">
-									<p> ReMoDiffuse </p>
+									<p> MARDM </p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/ReMoDiffuse/remodiffuse_3_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/mardm_leftrightleft.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
@@ -470,7 +475,7 @@
 										<strong>Ours</strong>
 									</p>
 									<video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
-										<source src="static/videos/text2motion/EnergyMoGen/ours_3_d.mp4" type="video/mp4">
+										<source src="static/videos/cmp/madm_leftrightleft.mp4" type="video/mp4">
 									</video>
 								</div>
 							</div>
@@ -480,62 +485,32 @@
 			</div>
 			</div>
 		</section>
+
+	
+
 		<section class="hero is-small">
 			<div class="hero-body">
 				<div class="container">
 					<h2 class="title is-3 has-text-centered">Quantitative Results</h2>
 					<div id="video-carousel" class="carousel results-carousel">
-						<!-- <div class="item card-hover">
-        <div style="display: flex; justify-content: center; align-items: center; width: 100%;">
-          <img src="static/images/FID_Top1.png" alt="Performance comparison on HumanML3D using R-Precision (Top-1) and FID." loading="lazy" style="max-width: 60%; height: auto; object-fit: contain;"/>
-        </div>
-        <h2 class="subtitle has-text-centered">
-          Performance comparison on HumanML3D using R-Precision (Top-1) and FID.
-        </h2>
-      </div> -->
 						<div class="item card-hover">
 							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-								<img src="static/images/overview.png" alt="MADM architecture overview" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+								<img src="static/images/results/quantitative.png" alt="Quantitative Results" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
 							</div>
-							<h2 class="subtitle has-text-centered"> MADM Architecture </h2>
+							<!-- <h2 class="subtitle has-text-centered"> MADM Architecture </h2> -->
 						</div>
 						<div class="item card-hover">
 							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-								<img src="static/images/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+								<img src="static/images/results/long.png" alt="Long-term Motion Generation Results" loading="lazy" style="max-width: 60%; max-height: 500px; height: auto; object-fit: contain;" />
 							</div>
-							<h2 class="subtitle has-text-centered"> Illustration of our Masked Autoregressive Mamba (MAM) </h2>
-						</div>
-						<div class="item card-hover">
-							<div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-								<img src="static/images/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
-							</div>
-							<h2 class="subtitle has-text-centered"> Illustration of our Semantic-Aware Spatial Augmentation (SASA) </h2>
+							<!-- <h2 class="subtitle has-text-centered"> Illustration of our Masked Autoregressive Mamba (MAM) </h2> -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- Paper poster -->
-		<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-      <p class="has-text-centered" style="margin-bottom: 1rem; color: var(--text-secondary);">
-        Poster coming soon! We will upload the poster after the paper is accepted.
-      </p>
-      <div style="display: flex; justify-content: center; align-items: center; height: 400px; background: var(--background-accent); border-radius: var(--border-radius-lg); border: 2px dashed var(--border-color);">
-        <div style="text-align: center; color: var(--text-secondary);">
-          <i class="fas fa-file-image" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-          <p>Poster will be available after acceptance</p>
-        </div>
-      </div>
-        
-      </div>
-    </div>
-  </section> -->
-		<!--End paper poster -->
-		<!--BibTex citation -->
-		<section class="section" id="BibTeX">
+
+		<!-- <section class="section" id="BibTeX">
 			<div class="container is-max-desktop content">
 				<div class="bibtex-header">
 					<h2 class="title">BibTeX</h2>
@@ -551,7 +526,7 @@
   year={2025},
 }</code></pre>
 			</div>
-		</section>
+		</section> -->
 		<!--End BibTex citation -->
 		<footer class="footer">
 			<div class="container">
