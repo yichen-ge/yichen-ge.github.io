@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About Me"
+title: "About me"
 author_profile: true
 redirect_from: 
   - /about/
@@ -9,11 +9,11 @@ redirect_from:
 
 I am a student at the China University of Petroleum (Beijing). I am currently pursuing a master's degree in Artificial Intelligence.
 
- My research interest includes computer vision, human motion generation, and generative models.
-
-[Email](mailto:2024216101@student.cup.edu.cn) / [Github](https://github.com/yichen-ge) 
+My research interest includes computer vision, human motion generation, and generative models.
 
 
+
+Email: 2024216101@student.cup.edu.cn (**Please state your purpose** )
 
 ## News
 
