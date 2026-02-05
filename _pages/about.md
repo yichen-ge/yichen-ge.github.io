@@ -13,7 +13,7 @@ My research interest includes computer vision, human motion generation, and gene
 
 
 
-Email: 2024216101@student.cup.edu.cn (**Please state your purpose** )
+Email: 2024216101@student.cup.edu.cn (**Please state your purpose**)
 
 ## News
 
