@@ -179,7 +179,7 @@
         <i class="fas fa-chevron-up"></i>
     </button>
     <main id="main-content">
-        <section class="hero">
+        <section class="hero hero-top">
             <div class="hero-body">
                 <div class="container is-max-desktop">
                     <div class="columns is-centered">
@@ -191,7 +191,7 @@
                                 <span class="author-block">
                                     <a href="mailto:cyangli@cup.edu.cn">Chengyang Li</a><sup>1,*</sup>,</span>
                                 <span class="author-block">
-                                    <a href="mailto:zhuliping@cup.edu.cn">Liping Zhu</a><sup>1,†</sup>,</span>
+                                    <a href="mailto:zhuliping@cup.edu.cn">Liping Zhu</a><sup>1,&dagger;</sup>,</span>
                                 <span class="author-block">
                                     <a href="mailto:2024216038@student.cup.edu.cn">Jian Gao</a><sup>1</sup>,</span>
                                 <span class="author-block">
@@ -200,7 +200,7 @@
                             </div>
                             <div class="is-size-5 publication-authors">
                                 <span class="author-block"><sup>1</sup>College of Artificial Intelligence, China University of Petroleum (Beijing)</span>
-                                <br><small style="color: rgba(255, 255, 255, 0.9); margin-top: 0.5rem; display: block;"><sup>*</sup>Equal Contribution &nbsp;&nbsp;&nbsp; <sup>†</sup>Corresponding Author</small>
+                                <br><small class="author-note"><sup>*</sup>Equal Contribution &nbsp;&nbsp;&nbsp; <sup>&dagger;</sup>Corresponding Author</small>
                             </div>
                             <div class="column has-text-centered">
                                 <div class="publication-links">
@@ -209,7 +209,7 @@
                                             <span class="icon">
                                                 <i class="fas fa-file-pdf"></i>
                                             </span>
-                                            <span>Paper <span class="badge" style="margin-left: 0.5rem; font-size: 0.9rem;">Submitted to Pattern Recognition</span></span>
+                                            <span>Paper <span class="badge status-badge">Submitted to Pattern Recognition</span></span>
                                         </a>
                                     </span>
                                     <span class="link-block">
@@ -217,7 +217,7 @@
                                             <span class="icon">
                                                 <i class="fab fa-github"></i>
                                             </span>
-                                            <span>Code <span class="badge" style="margin-left: 0.5rem; font-size: 0.9rem;">Code will be open-sourced upon acceptance</span></span>
+                                            <span>Code <span class="badge status-badge">Code will be open-sourced upon acceptance</span></span>
                                         </a>
                                     </span>
                                 </div>
@@ -228,9 +228,9 @@
             </div>
         </section>
         
-        <section class="section hero is-light">
-            <h2 class="title is-3 has-text-centered">Abstract</h2>
+        <section class="section hero is-light unified-section">
             <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">Abstract</h2>
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <div class="content has-text-justified">
@@ -241,17 +241,17 @@
             </div>
         </section>
         
-        <section class="section hero is-light">
-            <h2 class="title is-3 has-text-centered">Performance Comparison</h2>
+        <section class="section hero is-light unified-section">
             <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">Performance Comparison</h2>
                 <div class="columns is-centered has-text-centered">
                     <div class="column is-four-fifths">
                         <div class="content has-text-justified">
                             <p> We compare MADM with state-of-the-art methods on the HumanML3D dataset. As shown in the chart below, our model achieves a superior trade-off between motion quality (FID) and semantic alignment (Top-1 Precision). </p>
                         </div>
-                        <div class="box" style="background-color: #ffffff; border: 1px solid var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-top: 1.5rem; box-shadow: var(--shadow-sm);">
-                            <img src="static/images/FID_Top1.png" alt="Quantitative results comparison" style="width: 100%; max-width: 450px; height: auto; object-fit: contain;" />
-                            <p class="is-size-6 has-text-grey" style="margin-top: 1rem;">
+                        <div class="box performance-card">
+                            <img src="static/images/FID_Top1.png" alt="Quantitative results comparison" class="media-image media-image--sm" />
+                            <p class="is-size-6 has-text-grey media-caption">
                                 MADM (Ours) outperforms existing diffusion and autoregressive models, achieving the lowest FID (0.052) and competitive R-Precision.
                             </p>
                         </div>
@@ -260,26 +260,26 @@
             </div>
         </section>
         
-        <section class="hero is-small">
+        <section class="hero is-small unified-section">
             <div class="hero-body">
-                <div class="container">
+                <div class="container is-max-desktop">
                     <h2 class="title is-3 has-text-centered">Method</h2>
-                    <div id="video-carousel" class="carousel results-carousel">
+                    <div class="carousel results-carousel">
                         <div class="item card-hover">
-                            <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-                                <img src="static/images/method/overview.png" alt="MADM architecture overview" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+                            <div class="media-frame method-media-frame">
+                                <img src="static/images/method/overview.png" alt="MADM architecture overview" loading="lazy" class="media-image method-media-image" />
                             </div>
                             <h2 class="subtitle has-text-centered"> MADM Architecture </h2>
                         </div>
                         <div class="item card-hover">
-                            <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-                                <img src="static/images/method/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+                            <div class="media-frame method-media-frame">
+                                <img src="static/images/method/mam.png" alt="Illustration of our Masked Autoregressive Mamba (MAM)" loading="lazy" class="media-image method-media-image" />
                             </div>
                             <h2 class="subtitle has-text-centered"> Illustration of our Masked Autoregressive Mamba (MAM) </h2>
                         </div>
                         <div class="item card-hover">
-                            <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-                                <img src="static/images/method/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+                            <div class="media-frame method-media-frame">
+                                <img src="static/images/method/sasa.png" alt="Illustration of our Semantic-Aware Spatial Augmentation (SASA)" loading="lazy" class="media-image method-media-image" />
                             </div>
                             <h2 class="subtitle has-text-centered"> Illustration of our Semantic-Aware Spatial Augmentation (SASA) </h2>
                         </div>
@@ -288,145 +288,117 @@
             </div>
         </section>
 
-        <section class="hero is-small">
+        <section class="hero is-small unified-section">
             <div class="hero-body">
-                <div class="container">
+                <div class="container is-max-desktop">
                     <h2 class="title is-3 has-text-centered">Text-to-Motion</h2>
-                    <div id="video-carousel" class="carousel results-carousel">
+                    <div class="carousel results-carousel">
                         <div class="item card-hover">
-                            <video id="dollyzoom" autoplay controls muted loop playsinline 
-                                style="width: 100%; max-width: 500px; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+                            <video class="media-video" autoplay controls muted loop playsinline>
                                 <source src="static/videos/t2m/chacha.mp4" type="video/mp4">
                             </video>
-                            <h2 class="subtitle has-text-centered" style="margin-top: 1rem;"> the man dances the cha cha. </h2>
+                            <h2 class="subtitle has-text-centered media-subtitle"> the man dances the cha cha. </h2>
                         </div>
                         <div class="item card-hover">
-                            <video id="dollyzoom" autoplay controls muted loop playsinline 
-                                style="width: 100%; max-width: 500px; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+                            <video class="media-video" autoplay controls muted loop playsinline>
                                 <source src="static/videos/t2m/backwards.mp4" type="video/mp4">
                             </video>
-                            <h2 class="subtitle has-text-centered" style="margin-top: 1rem;"> a person walks backwards several steps. </h2>
+                            <h2 class="subtitle has-text-centered media-subtitle"> a person walks backwards several steps. </h2>
                         </div>
                         <div class="item card-hover">
-                            <video id="dollyzoom" autoplay controls muted loop playsinline 
-                                style="width: 100%; max-width: 500px; height: auto; object-fit: contain; display: block; margin: 0 auto;">
+                            <video class="media-video" autoplay controls muted loop playsinline>
                                 <source src="static/videos/t2m/push.mp4" type="video/mp4">
                             </video>
-                            <h2 class="subtitle has-text-centered" style="margin-top: 1rem;"> the person moves backwards as if pushed by someone in front of them. </h2>
+                            <h2 class="subtitle has-text-centered media-subtitle"> the person moves backwards as if pushed by someone in front of them. </h2>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section class="section hero is-light">
-            <h2 class="title is-3 has-text-centered">Qualitative Results</h2> 
+        <section class="section hero is-light unified-section">
             <div class="container is-max-desktop">
+                <h2 class="title is-3 has-text-centered">Qualitative Results</h2>
                 <div class="columns is-centered">
                     <div class="column is-full-width">
-                        <div class="content has-text-justified">
-                            <p>
-                                <center>
-                                    <b>Text:</b> a person plays a violin with their right hand in the air and their left hand holding the bow.
-                                </center>
-                            </p>
-                        </div>
-                        <div class="columns is-centered">
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p> Momask </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                        <p class="prompt-text"><b>Text:</b> a person plays a violin with their right hand in the air and their left hand holding the bow.</p>
+                        <div class="columns is-centered comparison-grid">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p>Momask</p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/momask_violin.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p> MARDM </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p>MARDM</p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/mardm_violin.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p>
-                                        <strong>Ours</strong>
-                                    </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p><strong>Ours</strong></p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/madm_violin.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
                         </div>
-                        <hr class="new">
-                        <div class="content has-text-justified">
-                            <p>
-                                <center>
-                                    <b>Text:</b> a man walks forward a few steps, raises his left hand to his face, then continues walking in a circle.
-                                </center>
-                            </p>
-                        </div>
-                        <div class="columns is-centered">
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p> Momask </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                        <hr class="section-divider">
+                        <p class="prompt-text"><b>Text:</b> a man walks forward a few steps, raises his left hand to his face, then continues walking in a circle.</p>
+                        <div class="columns is-centered comparison-grid">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p>Momask</p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/momask_walklefthand.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p> MARDM </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p>MARDM</p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/mardm_walklefthand.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p>
-                                        <strong>Ours</strong>
-                                    </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p><strong>Ours</strong></p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/madm_walklefthand.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
                         </div>
-                        <hr class="new">
-                        <div class="content has-text-justified">
-                            <p>
-                                <center>
-                                    <b>Text:</b> the person paces to his left, then to his right, and finally to his left again.
-                                </center>
-                            </p>
-                        </div>
-                        <div class="columns is-centered">
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p> Momask </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                        <hr class="section-divider">
+                        <p class="prompt-text"><b>Text:</b> the person paces to his left, then to his right, and finally to his left again.</p>
+                        <div class="columns is-centered comparison-grid">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p>Momask</p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/momask_leftrightleft.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p> MARDM </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p>MARDM</p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/mardm_leftrightleft.mp4" type="video/mp4">
                                     </video>
                                 </div>
                             </div>
-                            <div class="column">
-                                <div class="content has-text-centered">
-                                    <p>
-                                        <strong>Ours</strong>
-                                    </p>
-                                    <video id="dollyzoom" autoplay controls muted loop playsinline width="100%">
+                            <div class="column comparison-column">
+                                <div class="content has-text-centered comparison-card">
+                                    <p><strong>Ours</strong></p>
+                                    <video class="comparison-video" autoplay controls muted loop playsinline>
                                         <source src="static/videos/cmp/madm_leftrightleft.mp4" type="video/mp4">
                                     </video>
                                 </div>
@@ -435,22 +407,21 @@
                     </div>
                 </div>
             </div>
-            </div>
         </section>
 
-        <section class="hero is-small">
+        <section class="hero is-small unified-section">
             <div class="hero-body">
-                <div class="container">
+                <div class="container is-max-desktop">
                     <h2 class="title is-3 has-text-centered">Quantitative Results</h2>
-                    <div id="video-carousel" class="carousel results-carousel">
+                    <div class="carousel results-carousel">
                         <div class="item card-hover">
-                            <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-                                <img src="static/images/results/quantitative.png" alt="Quantitative Results" loading="lazy" style="max-width: 100%; max-height: 500px; height: auto; object-fit: contain;" />
+                            <div class="media-frame">
+                                <img src="static/images/results/quantitative.png" alt="Quantitative Results" loading="lazy" class="media-image" />
                             </div>
                         </div>
                         <div class="item card-hover">
-                            <div style="display: flex; justify-content: center; align-items: center; width: 100%; min-height: 450px; padding: 1.5rem;">
-                                <img src="static/images/results/long.png" alt="Long-term Motion Generation Results" loading="lazy" style="max-width: 60%; max-height: 500px; height: auto; object-fit: contain;" />
+                            <div class="media-frame">
+                                <img src="static/images/results/long.png" alt="Long-term Motion Generation Results" loading="lazy" class="media-image media-image--compact" />
                             </div>
                         </div>
                     </div>
