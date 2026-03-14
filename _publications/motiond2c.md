@@ -1,5 +1,5 @@
 ---
-title: "Fast and Accurate Text-to-Motion Generation through Discrete-Guided Continuous Modeling"
+title: "&#128681; [ICASSP 2026 (Oral)] Fast and Accurate Text-to-Motion Generation through Discrete-Guided Continuous Modeling"
 collection: publications
 category: conferences
 permalink: #/publication/2024-02-17-paper-title-number-4
@@ -7,7 +7,7 @@ excerpt: 'Text-to-Motion Generation, Multi-modal Learning, Autoregressive Models
 date: 2026-01-18
 venue: 'ICASSP 2026 (Oral)'
 paperurl: #'https://academicpages.github.io/files/paper3.pdf'
-citation: #'Your Name, You. (2025). &quot;Fast and Accurate Text-to-Motion Generation through Discrete-Guided Continuous Modeling.&quot; <i>ICASSP 2026</i>. 1(3).'b
+# citation: 'Yichen Ge et al. (2026). &quot;Fast and Accurate Text-to-Motion Generation through Discrete-Guided Continuous Modeling.&quot; <i>ICASSP 2026</i>.'
 ---
 
 ## Abstract
