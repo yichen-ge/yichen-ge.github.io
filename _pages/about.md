@@ -25,46 +25,35 @@ redirect_from:
     <span class="home-pill"><i class="fas fa-flag-checkered" aria-hidden="true"></i> Ph.D. 2027</span>
   </div>
 
-  <div class="home-highlight-grid">
-    <div class="home-highlight">
-      <h3><i class="fas fa-user-graduate" aria-hidden="true"></i> Current Study</h3>
-      <p>Master's degree in Artificial Intelligence, advised by Assoc. Prof. Liping Zhu.</p>
-    </div>
-    <div class="home-highlight">
-      <h3><i class="fas fa-microscope" aria-hidden="true"></i> Research Interests</h3>
-      <p>Computer vision, human motion generation, and generative models.</p>
-    </div>
+  <div class="home-highlight home-highlight--single">
+    <h3><i class="fas fa-compass" aria-hidden="true"></i> Current Focus</h3>
+    <p>I am pursuing a Master's degree in Artificial Intelligence at China University of Petroleum (Beijing), advised by Assoc. Prof. Liping Zhu. My research interests include computer vision, human motion generation, and generative models.</p>
   </div>
 
   <h2><i class="fas fa-bullhorn" aria-hidden="true"></i> News</h2>
   <ul>
     <li>
-      <span class="home-item-date"><i class="far fa-calendar" aria-hidden="true"></i> <em>2026.01</em></span>
-      <span class="home-item-text"><i class="fas fa-file-circle-check home-list-icon" aria-hidden="true"></i> 1 paper was accepted by ICASSP 2026 <span class="home-tag">Oral</span>.</span>
+      <span class="home-item-text"><i class="fas fa-file-circle-check home-list-icon" aria-hidden="true"></i> <em>2026.01</em>: 1 paper was accepted by ICASSP 2026 <span class="home-tag">Oral</span>.</span>
     </li>
   </ul>
 
   <h2><i class="fas fa-award" aria-hidden="true"></i> Honors and Awards</h2>
   <ul>
     <li>
-      <span class="home-item-date"><i class="far fa-calendar" aria-hidden="true"></i> <em>2025.12</em></span>
-      <span class="home-item-text"><i class="fas fa-medal home-list-icon" aria-hidden="true"></i> Leyard Scholarship, China University of Petroleum (Beijing).</span>
+      <span class="home-item-text"><i class="fas fa-medal home-list-icon" aria-hidden="true"></i> <em>2025.12</em>, Leyard Scholarship, China University of Petroleum (Beijing).</span>
     </li>
     <li>
-      <span class="home-item-date"><i class="far fa-calendar" aria-hidden="true"></i> <em>2024.06</em></span>
-      <span class="home-item-text"><i class="fas fa-medal home-list-icon" aria-hidden="true"></i> Outstanding Graduate, China University of Petroleum (Beijing).</span>
+      <span class="home-item-text"><i class="fas fa-medal home-list-icon" aria-hidden="true"></i> <em>2024.06</em>, Outstanding Graduate, China University of Petroleum (Beijing).</span>
     </li>
   </ul>
 
   <h2><i class="fas fa-school" aria-hidden="true"></i> Education</h2>
   <ul>
     <li>
-      <span class="home-item-date"><i class="far fa-calendar" aria-hidden="true"></i> <em>2024.09 - 2027.06</em></span>
-      <span class="home-item-text"><i class="fas fa-graduation-cap home-list-icon" aria-hidden="true"></i> China University of Petroleum (Beijing), Master's degree in Artificial Intelligence, advised by <strong>Assoc. Prof. Liping Zhu</strong>.</span>
+      <span class="home-item-text"><i class="fas fa-graduation-cap home-list-icon" aria-hidden="true"></i> <em>2024.09 - 2027.06</em>, China University of Petroleum (Beijing), Master's degree in Artificial Intelligence, advised by <strong>Assoc. Prof. Liping Zhu</strong>.</span>
     </li>
     <li>
-      <span class="home-item-date"><i class="far fa-calendar" aria-hidden="true"></i> <em>2020.09 - 2024.06</em></span>
-      <span class="home-item-text"><i class="fas fa-graduation-cap home-list-icon" aria-hidden="true"></i> China University of Petroleum (Beijing), Bachelor of Engineering in Computer Science and Technology.</span>
+      <span class="home-item-text"><i class="fas fa-graduation-cap home-list-icon" aria-hidden="true"></i> <em>2020.09 - 2024.06</em>, China University of Petroleum (Beijing), Bachelor of Engineering in Computer Science and Technology.</span>
     </li>
   </ul>
 </div>
