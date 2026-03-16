@@ -33,27 +33,27 @@ redirect_from:
   <h2><i class="fas fa-bullhorn" aria-hidden="true"></i> News</h2>
   <ul>
     <li>
-      <span class="home-item-text"><i class="fas fa-file-circle-check home-list-icon" aria-hidden="true"></i> <em>2026.01</em>: 1 paper was accepted by ICASSP 2026 <span class="home-tag">Oral</span>.</span>
+      <span class="home-item-text"><em>2026.01</em>: 1 paper was accepted by ICASSP 2026 <span class="home-tag">Oral</span>.</span>
     </li>
   </ul>
 
   <h2><i class="fas fa-award" aria-hidden="true"></i> Honors and Awards</h2>
   <ul>
     <li>
-      <span class="home-item-text"><i class="fas fa-medal home-list-icon" aria-hidden="true"></i> <em>2025.12</em>, Leyard Scholarship, China University of Petroleum (Beijing).</span>
+      <span class="home-item-text"><em>2025.12</em>, Leyard Scholarship, China University of Petroleum (Beijing).</span>
     </li>
     <li>
-      <span class="home-item-text"><i class="fas fa-medal home-list-icon" aria-hidden="true"></i> <em>2024.06</em>, Outstanding Graduate, China University of Petroleum (Beijing).</span>
+      <span class="home-item-text"><em>2024.06</em>, Outstanding Graduate, China University of Petroleum (Beijing).</span>
     </li>
   </ul>
 
   <h2><i class="fas fa-school" aria-hidden="true"></i> Education</h2>
   <ul>
     <li>
-      <span class="home-item-text"><i class="fas fa-graduation-cap home-list-icon" aria-hidden="true"></i> <em>2024.09 - 2027.06</em>, China University of Petroleum (Beijing), Master's degree in Artificial Intelligence, advised by <strong>Assoc. Prof. Liping Zhu</strong>.</span>
+      <span class="home-item-text"><em>2024.09 - 2027.06</em>, China University of Petroleum (Beijing), Master's degree in Artificial Intelligence, advised by <strong>Assoc. Prof. Liping Zhu</strong>.</span>
     </li>
     <li>
-      <span class="home-item-text"><i class="fas fa-graduation-cap home-list-icon" aria-hidden="true"></i> <em>2020.09 - 2024.06</em>, China University of Petroleum (Beijing), Bachelor of Engineering in Computer Science and Technology.</span>
+      <span class="home-item-text"><em>2020.09 - 2024.06</em>, China University of Petroleum (Beijing), Bachelor of Engineering in Computer Science and Technology.</span>
     </li>
   </ul>
 </div>
