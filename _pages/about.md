@@ -17,13 +17,6 @@ redirect_from:
     </div>
   </div>
 
-  <div class="home-facts">
-    <span class="home-facts-label"><strong>Main Research Interests:</strong></span>
-    <span class="home-pill">Generative Models</span>
-    <span class="home-pill">Human Motion</span>
-    <span class="home-pill">Computer Vision</span>
-  </div>
-
   <h2><i class="fas fa-bullhorn" aria-hidden="true"></i> News</h2>
   <ul>
     <li>
