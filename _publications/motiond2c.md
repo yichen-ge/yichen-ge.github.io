@@ -6,7 +6,7 @@ permalink: #/publication/2024-02-17-paper-title-number-4
 excerpt: 'Text-to-Motion Generation, Multi-modal Learning, Autoregressive Models, Flow Models, Generative Models'
 date: 2026-01-18
 venue: 'ICASSP 2026 (Oral)'
-paperurl: #'https://academicpages.github.io/files/paper3.pdf'
+paperurl: 'https://ieeexplore.ieee.org/document/11464806'
 # citation: 'Yichen Ge et al. (2026). &quot;Fast and Accurate Text-to-Motion Generation through Discrete-Guided Continuous Modeling.&quot; <i>ICASSP 2026</i>.'
 ---
 
