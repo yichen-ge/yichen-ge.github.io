@@ -20,6 +20,9 @@ redirect_from:
   <h2><i class="fas fa-bullhorn" aria-hidden="true"></i> News</h2>
   <ul>
     <li>
+      <span class="home-item-text"><em>2026.07</em>: 1 paper was accepted by Pattern Recognition.</span>
+    </li>
+    <li>
       <span class="home-item-text"><em>2026.01</em>: 1 paper was accepted by ICASSP 2026 (Oral).</span>
     </li>
   </ul>
