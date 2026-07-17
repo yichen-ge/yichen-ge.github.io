@@ -47,4 +47,14 @@ redirect_from:
       <span class="home-item-text"><em>2020.09 - 2024.06</em>, China University of Petroleum (Beijing), Bachelor of Engineering in Computer Science and Technology.</span>
     </li>
   </ul>
+
+  <h2><i class="fas fa-handshake" aria-hidden="true"></i> Services</h2>
+  <ul>
+    <li>
+      <span class="home-item-text"><strong>Journal Reviewer:</strong> <em>Pattern Recognition</em>, <em>Image and Vision Computing</em>.</span>
+    </li>
+    <li>
+      <span class="home-item-text"><strong>Conference Reviewer:</strong> IJCNN, PRICAI.</span>
+    </li>
+  </ul>
 </div>
