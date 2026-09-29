@@ -21,30 +21,30 @@ redirect_from:
   <h2><i class="fas fa-bullhorn" aria-hidden="true"></i> News</h2>
   <ul>
     <li>
-      <span class="home-item-text"><em>2026.07</em>: 1 paper was accepted by Pattern Recognition.</span>
+      <span class="home-item-text"><time class="home-item-date" datetime="2026-07">2026.07</time>: 1 paper was accepted by Pattern Recognition.</span>
     </li>
     <li>
-      <span class="home-item-text"><em>2026.01</em>: 1 paper was accepted by ICASSP 2026 (Oral).</span>
+      <span class="home-item-text"><time class="home-item-date" datetime="2026-01">2026.01</time>: 1 paper was accepted by ICASSP 2026 (Oral).</span>
     </li>
   </ul>
 
   <h2><i class="fas fa-award" aria-hidden="true"></i> Honors and Awards</h2>
   <ul>
     <li>
-      <span class="home-item-text"><em>2025.12</em>, Leyard Scholarship, China University of Petroleum (Beijing).</span>
+      <span class="home-item-text"><time class="home-item-date" datetime="2025-12">2025.12</time>, Leyard Scholarship, China University of Petroleum (Beijing).</span>
     </li>
     <li>
-      <span class="home-item-text"><em>2024.06</em>, Outstanding Graduate, China University of Petroleum (Beijing).</span>
+      <span class="home-item-text"><time class="home-item-date" datetime="2024-06">2024.06</time>, Outstanding Graduate, China University of Petroleum (Beijing).</span>
     </li>
   </ul>
 
   <h2><i class="fas fa-school" aria-hidden="true"></i> Education</h2>
   <ul>
     <li>
-      <span class="home-item-text"><em>2024.09 - 2027.06</em>, China University of Petroleum (Beijing), Master's degree in Artificial Intelligence, advised by <strong>Assoc. Prof. <a href="https://www.cup.edu.cn/cupai/szdw/jsml/08ceb4581fbf4ae39e34cbc88ab1e183.htm">Liping Zhu</a></strong>.</span>
+      <span class="home-item-text"><span class="home-item-date" aria-label="September 2024 to June 2027"><time datetime="2024-09">2024.09</time>–<time datetime="2027-06">2027.06</time></span>, China University of Petroleum (Beijing), Master's degree in Artificial Intelligence, advised by <strong>Assoc. Prof. <a href="https://www.cup.edu.cn/cupai/szdw/jsml/08ceb4581fbf4ae39e34cbc88ab1e183.htm">Liping Zhu</a></strong>.</span>
     </li>
     <li>
-      <span class="home-item-text"><em>2020.09 - 2024.06</em>, China University of Petroleum (Beijing), Bachelor of Engineering in Computer Science and Technology.</span>
+      <span class="home-item-text"><span class="home-item-date" aria-label="September 2020 to June 2024"><time datetime="2020-09">2020.09</time>–<time datetime="2024-06">2024.06</time></span>, China University of Petroleum (Beijing), Bachelor of Engineering in Computer Science and Technology.</span>
     </li>
   </ul>
 
@@ -54,7 +54,7 @@ redirect_from:
       <span class="home-item-text"><strong>Journal Reviewer:</strong> <em>Pattern Recognition</em>, <em>Image and Vision Computing</em>.</span>
     </li>
     <li>
-      <span class="home-item-text"><strong>Conference Reviewer:</strong> IJCNN, PRICAI.</span>
+      <span class="home-item-text"><strong>Conference Reviewer:</strong> ICASSP, IJCNN, PRICAI.</span>
     </li>
   </ul>
 </div>
