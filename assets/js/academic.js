@@ -19,7 +19,7 @@
     }
     if (icon) icon.className = dark ? 'fas fa-moon' : 'fas fa-sun';
     const color = document.querySelector('meta[name="theme-color"]');
-    if (color) color.content = dark ? '#171d27' : '#fbfaf8';
+    if (color) color.content = dark ? '#101923' : '#f7f9fc';
   };
 
   applyTheme();

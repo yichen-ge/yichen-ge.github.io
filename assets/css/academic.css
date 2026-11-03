@@ -1,44 +1,50 @@
 /* Shared presentation for the personal site. MADM has its own stylesheet. */
 :root {
-  --global-bg-color: #fbfaf8;
-  --global-text-color: #293444;
-  --global-text-color-light: #657083;
-  --global-link-color: #365a91;
-  --global-link-color-hover: #213e6c;
-  --global-link-color-visited: #365a91;
-  --global-border-color: #e4e5e8;
-  --global-masthead-link-color: #536074;
-  --global-footer-bg-color: #f3f2ef;
+  --global-bg-color: #f7f9fc;
+  --global-text-color: #344256;
+  --global-text-color-light: #596b80;
+  --global-link-color: #146575;
+  --global-link-color-hover: #0c4b58;
+  --global-link-color-visited: #146575;
+  --global-border-color: #dce4ed;
+  --global-masthead-link-color: #465c73;
+  --global-footer-bg-color: #edf1f6;
   --surface: #fff;
-  --surface-muted: #f2f4f8;
-  --accent: #365a91;
-  --accent-soft: #edf2fa;
-  --heading: #202d43;
-  --muted: #657083;
-  --border: #e4e5e8;
-  --success: #35704f;
-  --success-soft: #eef5ee;
+  --surface-muted: #eaf0f6;
+  --accent: #146575;
+  --accent-soft: #e9f3f5;
+  --heading: #172a42;
+  --muted: #596b80;
+  --border: #dce4ed;
+  --success: #25664b;
+  --success-soft: #edf7f1;
+  --button-primary-bg: #165f6e;
+  --button-primary-hover: #104c59;
+  --button-primary-text: #fff;
 }
 
 html[data-theme="dark"] {
-  --global-bg-color: #171d27;
-  --global-text-color: #d6dce6;
-  --global-text-color-light: #a4afc0;
-  --global-link-color: #a1bff0;
-  --global-link-color-hover: #c3d6f6;
-  --global-link-color-visited: #a1bff0;
-  --global-border-color: #343e4e;
-  --global-masthead-link-color: #c2cbd9;
-  --global-footer-bg-color: #131922;
-  --surface: #1e2633;
-  --surface-muted: #283345;
-  --accent: #a1bff0;
-  --accent-soft: #27354b;
-  --heading: #edf1f8;
-  --muted: #a4afc0;
-  --border: #343e4e;
-  --success: #a2d3b2;
-  --success-soft: #22362c;
+  --global-bg-color: #101923;
+  --global-text-color: #d2dce8;
+  --global-text-color-light: #a4b5c8;
+  --global-link-color: #80ccd4;
+  --global-link-color-hover: #ace2e7;
+  --global-link-color-visited: #80ccd4;
+  --global-border-color: #304255;
+  --global-masthead-link-color: #c2d0df;
+  --global-footer-bg-color: #0c141d;
+  --surface: #182432;
+  --surface-muted: #253548;
+  --accent: #80ccd4;
+  --accent-soft: #1b3944;
+  --heading: #edf3fa;
+  --muted: #a4b5c8;
+  --border: #304255;
+  --success: #9cd5b6;
+  --success-soft: #1d362d;
+  --button-primary-bg: #80ccd4;
+  --button-primary-hover: #ace2e7;
+  --button-primary-text: #10272d;
 }
 
 .academic-site {
@@ -131,11 +137,12 @@ html[data-theme="dark"] {
 .profile__links a:hover { color: var(--accent); text-decoration: underline; }
 
 /* Navigation and footer keep the same visual rhythm as the content. */
-.academic-site .masthead { animation: none; }
+.academic-site .masthead { background: var(--surface); animation: none; }
 .academic-site .masthead__inner-wrap { max-width: 1120px; padding: 12px 32px; }
 .academic-nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 42px; }
 .academic-nav a { font-size: 0.88rem; }
-.academic-site .academic-nav__brand { color: var(--heading); font-weight: 700; white-space: nowrap; }
+.academic-site .academic-nav__brand { color: var(--heading); font-size: clamp(1.35rem, 2vw, 1.5rem); font-weight: 700; line-height: 1.2; letter-spacing: -0.035em; white-space: nowrap; }
+.academic-site .academic-nav__brand:hover { color: var(--accent); }
 .academic-nav__links { display: flex; align-items: center; gap: 24px; margin: 0; padding: 0; list-style: none; }
 .academic-nav__links a { padding: 8px 0; color: var(--muted); }
 .academic-nav__links a[aria-current="page"] { color: var(--accent); border-bottom: 2px solid var(--accent); }
@@ -168,8 +175,8 @@ html[data-theme="dark"] {
   transition: background 150ms ease, border-color 150ms ease;
 }
 .academic-site .academic-button:hover { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); text-decoration: none; }
-.academic-site .academic-button--primary { border-color: #365a91; background: #365a91; color: #fff; }
-.academic-site .academic-button--primary:hover { border-color: #254577; background: #254577; color: #fff; }
+.academic-site .academic-button--primary { border-color: var(--button-primary-bg); background: var(--button-primary-bg); color: var(--button-primary-text); }
+.academic-site .academic-button--primary:hover { border-color: var(--button-primary-hover); background: var(--button-primary-hover); color: var(--button-primary-text); }
 .home-section { border-top: 1px solid var(--border); padding: 28px 0 32px; }
 .home-section:last-child { padding-bottom: 0; }
 .page__content .home-section h2 { display: flex; align-items: baseline; gap: 14px; margin: 0 0 22px; padding: 0; border: 0; color: var(--heading); font-size: 1.15rem; letter-spacing: -0.02em; }
@@ -190,7 +197,7 @@ html[data-theme="dark"] {
 .page__content .service-list dt { margin: 0; color: var(--muted); font-size: 0.78rem; font-weight: 400; }
 .page__content .service-list dd { margin: 0; font-size: 0.85rem; }
 
-/* Publications: metadata, contribution, a short explanation, optional links. */
+/* Publications: metadata, authors, contribution notes, and optional links. */
 .publications-intro { margin-bottom: 38px; }
 .publications-intro p { margin: 0 0 12px; max-width: 580px; color: var(--muted); }
 .scholar-link { font-size: 0.83rem; }
@@ -202,7 +209,7 @@ html[data-theme="dark"] {
 .publication-card:target { border-color: var(--accent); }
 .publication-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-bottom: 14px; color: var(--muted); font-size: 0.75rem; }
 .venue-badge { padding: 3px 10px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); font-size: 0.7rem; font-weight: 700; }
-.oral-badge { padding: 2px 8px; border: 1px solid var(--success); border-radius: 4px; color: var(--success); font-size: 0.66rem; font-weight: 600; }
+.oral-badge { padding: 2px 8px; border: 1px solid var(--success); border-radius: 4px; background: var(--success-soft); color: var(--success); font-size: 0.66rem; font-weight: 600; }
 .publication-title { margin: 0 0 12px; color: var(--heading); font-size: 1.14rem; line-height: 1.45; letter-spacing: -0.02em; }
 .academic-site .publication-title a { color: inherit; text-decoration: none; }
 .academic-site .publication-title a:hover { color: var(--accent); text-decoration: underline; }
@@ -210,11 +217,37 @@ html[data-theme="dark"] {
 .publication-authors { margin: 0 0 7px; color: var(--muted); font-size: 0.79rem; line-height: 1.7; }
 .publication-author { display: inline-block; }
 .publication-authors strong { color: var(--heading); font-weight: 600; }
-.publication-role { margin: 0 0 14px; color: var(--accent); font-size: 0.73rem; }
+.publication-role { margin: 0 0 14px; color: var(--muted); font-size: 0.73rem; }
 .publication-links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .academic-site .publication-links .academic-button { min-height: 38px; padding: 6px 13px; font-size: 0.74rem; }
 .sitemap-list { padding-left: 20px; }
 .sitemap-list li { margin: 10px 0; }
+
+/* A roomier reading scale for desktop, with smaller notes kept legible. */
+@media (min-width: 925px) {
+  .academic-site { font-size: 1rem; }
+  .academic-nav a { font-size: 0.95rem; }
+  .sidebar .profile p { font-size: 0.9rem; }
+  .sidebar .profile__links li { font-size: 0.95rem; }
+  .academic-site .academic-button { font-size: 0.9rem; }
+  .page__content .home-section h2 { font-size: 1.25rem; }
+  .page__content .dated-list li,
+  .page__content .entry-heading h3,
+  .page__content .education-entry p,
+  .page__content .service-list dd { font-size: 1rem; }
+  .dated-list time,
+  .entry-date { font-size: 0.85rem; }
+  .page__content .service-list dt { font-size: 0.9rem; }
+  .scholar-link { font-size: 0.95rem; }
+  .publication-group__heading { font-size: 1.08rem; }
+  .publication-title { font-size: 1.25rem; }
+  .publication-authors { font-size: 0.94rem; }
+  .publication-role,
+  .publication-meta { font-size: 0.85rem; }
+  .venue-badge { font-size: 0.8rem; }
+  .oral-badge { font-size: 0.76rem; }
+  .academic-site .publication-links .academic-button { font-size: 0.85rem; }
+}
 
 @media (max-width: 924px) {
   .academic-site #main { grid-template-columns: minmax(0, 1fr); gap: 36px; max-width: 760px; margin-top: 32px; }
