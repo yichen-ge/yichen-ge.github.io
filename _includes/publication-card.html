@@ -1,9 +1,13 @@
 <article class="publication-card" id="{{ include.paper.slug }}" aria-labelledby="paper-{{ include.paper.slug }}" itemscope itemtype="https://schema.org/ScholarlyArticle">
   {% include publication-meta.html paper=include.paper %}
   <h3 class="publication-title" id="paper-{{ include.paper.slug }}" itemprop="headline">{% if include.paper.projecturl and include.paper.projecturl != empty %}<a href="{{ include.paper.projecturl | relative_url }}">{{ include.paper.title }} <span class="title-arrow" aria-hidden="true">↗</span></a>{% else %}{{ include.paper.title }}{% endif %}</h3>
-  {% if include.paper.authors and include.paper.authors != empty %}<p class="publication-authors">{{ include.paper.authors | escape | replace: site.author.name, '<strong>Yichen Ge</strong>' }}</p>{% endif %}
-  {% if include.paper.author_role %}<p class="publication-role"><span class="role-marker" aria-hidden="true">{% if include.paper.author_role == 'Corresponding author' %}†{% else %}*{% endif %}</span> {{ site.author.name }} · {{ include.paper.author_role }}</p>{% endif %}
-  <p class="publication-summary" itemprop="description">{{ include.paper.excerpt | strip_html }}</p>
-  {% if include.paper.topics %}<ul class="paper-topics" aria-label="Research topics">{% for topic in include.paper.topics %}<li>{{ topic }}</li>{% endfor %}</ul>{% endif %}
+  {% if include.paper.authors and include.paper.authors != empty %}
+    <p class="publication-authors">
+      {%- for author in include.paper.authors -%}
+        <span class="publication-author">{% if author.name == site.author.name %}<strong>{{ author.name | escape }}</strong>{% else %}{{ author.name | escape }}{% endif %}{% if author.marker %}<sup>{{ author.marker | escape }}</sup>{% endif %}</span>{% unless forloop.last %}, {% endunless %}
+      {%- endfor -%}
+    </p>
+  {% endif %}
+  {% if include.paper.author_note %}<p class="publication-role">{{ include.paper.author_note | escape }}</p>{% endif %}
   {% include publication-links.html paper=include.paper %}
 </article>

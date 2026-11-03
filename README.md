@@ -12,15 +12,15 @@ title: "Paper title"
 category: conferences # manuscripts for journal articles
 date: 2026-01-18
 venue: "Conference or journal"
-excerpt: "A short explanation of the research contribution."
-authors: "Author One, Yichen Ge, Author Three" # optional
-author_role: "Corresponding author" # optional
+authors: # optional, in the paper's author order
+  - name: "Author One"
+  - name: "Yichen Ge"
+    marker: "*"
+  - name: "Author Three"
+author_note: "* Corresponding author." # optional
 presentation: "Oral" # optional
 paperurl: "https://example.com/paper" # optional
 codeurl: "https://github.com/username/project" # optional
-topics:
-  - Text-to-motion
-  - Generative models
 ---
 ```
 

@@ -9,19 +9,12 @@ redirect_from:
 
 <div class="home-page">
   <section class="home-intro" aria-label="Introduction">
-    <p class="eyebrow">Computer vision &amp; generative models</p>
-    <p class="home-intro__headline">Learning to bring <br>human motion to life.</p>
     <p>I am a master’s student in Artificial Intelligence at <strong>China University of Petroleum (Beijing)</strong>, advised by Assoc. Prof. <a href="https://www.cup.edu.cn/cupai/szdw/jsml/08ceb4581fbf4ae39e34cbc88ab1e183.htm">Liping Zhu</a>. I also collaborate closely with Assoc. Prof. <a href="https://www.cup.edu.cn/cupai/szdw/jsml/1f31d6059517408aad81992a92a03279.htm">Chengyang Li</a>.</p>
-    <p>My research focuses on computer vision, human motion generation, and generative models.</p>
-    <ul class="research-topics" aria-label="Research interests">
-      <li>Human motion generation</li>
-      <li>Autoregressive models</li>
-      <li>Diffusion &amp; flow models</li>
-    </ul>
-    <div class="opportunity-note"><span class="status-dot" aria-hidden="true"></span><span>Seeking <strong>Ph.D. opportunities for 2027.</strong> <a href="mailto:{{ site.author.email }}">Let’s connect <span aria-hidden="true">↗</span></a></span></div>
+    <p>My research interests include computer vision, human motion generation, and generative models.</p>
+    <p><strong>I am actively seeking Ph.D. opportunities starting in 2027.</strong></p>
     <div class="home-actions">
       <a class="academic-button academic-button--primary" href="{{ '/publications/' | relative_url }}">View publications <span aria-hidden="true">↗</span></a>
-      <a class="academic-button" href="{{ site.author.googlescholar | escape }}">Google Scholar <span aria-hidden="true">↗</span></a>
+      <a class="academic-button" href="mailto:{{ site.author.email }}">Contact me</a>
     </div>
   </section>
 

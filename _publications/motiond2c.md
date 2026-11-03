@@ -2,15 +2,18 @@
 title: "Fast and Accurate Text-to-Motion Generation through Discrete-Guided Continuous Modeling"
 collection: publications
 category: conferences
-excerpt: 'Motiond2c bridges discrete and continuous motion representations, using discrete tokens to guide a Rectified Flow model for fast, fine-grained text-to-motion generation.'
 date: 2026-01-18
 venue: 'ICASSP 2026'
 presentation: 'Oral'
-author_role: 'Corresponding author'
-topics:
-  - Text-to-motion
-  - Discrete-to-continuous
-  - Rectified flow
+authors:
+  - name: "Liping Zhu"
+  - name: "Yichen Ge"
+    marker: "*"
+  - name: "Chengyang Li"
+    marker: "*"
+  - name: "Jian Gao"
+  - name: "Hao Li"
+author_note: "* Corresponding authors; equal contributions."
 paperurl: 'https://ieeexplore.ieee.org/document/11464806'
 codeurl:
 ---

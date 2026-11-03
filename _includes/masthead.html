@@ -1,7 +1,7 @@
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <nav class="academic-nav" aria-label="Main navigation">
-      <a class="academic-nav__brand" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>{{ site.title }}<span class="site-label"> / Research</span></a>
+      <a class="academic-nav__brand" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>{{ site.title }}</a>
       <ul class="academic-nav__links">
         {% for link in site.data.navigation.main %}
           <li><a href="{{ link.url | relative_url }}"{% if page.url contains link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
