@@ -1,0 +1,6 @@
+<div class="publication-meta">
+  <span class="venue-badge">{{ include.paper.venue }}</span>
+  {% assign publication_year = include.paper.date | date: '%Y' %}
+  {% unless include.paper.venue contains publication_year %}<time datetime="{{ include.paper.date | date: '%Y-%m-%d' }}">{{ publication_year }}</time>{% endunless %}
+  {% if include.paper.presentation %}<span class="oral-badge">{{ include.paper.presentation }}</span>{% endif %}
+</div>

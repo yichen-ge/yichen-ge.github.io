@@ -1,10 +1,17 @@
 ---
-title: "&#11088; [Pattern Recognition] MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation"
+title: "MADM: Bridging Mamba and Autoregressive Diffusion for Text-to-Motion Generation"
 collection: publications
 category: manuscripts
-permalink: /publication/madm
-excerpt: 'Text-to-Motion Generation; Autoregressive Models; Diffusion Models; State space models; Generative Models'
+excerpt: "A Mamba-based autoregressive diffusion model that generates continuous human motion with efficient sequence modeling and fine-grained text–motion alignment."
 date: 2026-07-01
-venue: 'Pattern Recognition'
+venue: "Pattern Recognition"
+authors: "Yichen Ge, Chengyang Li, Liping Zhu, Jian Gao, Xiaojie Lin"
+author_role: "Co-first author"
+projecturl: /MADM/
+paperurl:
+codeurl:
+topics:
+  - Text-to-motion
+  - Mamba
+  - Autoregressive diffusion
 ---
-

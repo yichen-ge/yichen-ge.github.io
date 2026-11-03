@@ -1,0 +1,8 @@
+{% assign paper_url = include.paper.paperurl | strip %}
+{% assign code_url = include.paper.codeurl | strip %}
+{% if paper_url != empty or code_url != empty %}
+  <div class="publication-links">
+    {% if paper_url != empty %}<a class="academic-button" href="{{ paper_url | relative_url | escape }}"><i class="fas fa-file-alt" aria-hidden="true"></i> Paper <span aria-hidden="true">↗</span></a>{% endif %}
+    {% if code_url != empty %}<a class="academic-button" href="{{ code_url | relative_url | escape }}"><i class="fab fa-github" aria-hidden="true"></i> Code <span aria-hidden="true">↗</span></a>{% endif %}
+  </div>
+{% endif %}
