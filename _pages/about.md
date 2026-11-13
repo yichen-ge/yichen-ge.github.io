@@ -10,7 +10,7 @@ redirect_from:
 <div class="home-page">
   <section class="home-intro" aria-label="Introduction">
     <p>I am a master’s student in Artificial Intelligence at <strong>China University of Petroleum (Beijing)</strong>, advised by Assoc. Prof. <a href="https://www.cup.edu.cn/cupai/szdw/jsml/08ceb4581fbf4ae39e34cbc88ab1e183.htm">Liping Zhu</a>. I also collaborate closely with Assoc. Prof. <a href="https://www.cup.edu.cn/cupai/szdw/jsml/1f31d6059517408aad81992a92a03279.htm">Chengyang Li</a>.</p>
-    <p>My research interests include computer vision, human motion generation, and generative models.</p>
+    <p>My current research focuses on embodied intelligence, particularly its data challenges. I am interested in how to scale up real-world data and cost-effectively build training datasets and benchmarks for embodied intelligence. My previous research focused on generative models and human motion generation, particularly autoregressive generation and text-to-motion generation.</p>
     <p><strong>I am actively seeking Ph.D. opportunities starting in 2027.</strong></p>
     <div class="home-actions">
       <a class="academic-button academic-button--primary" href="{{ '/publications/' | relative_url }}">View publications <span aria-hidden="true">↗</span></a>
