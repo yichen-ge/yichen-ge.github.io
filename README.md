@@ -1,42 +1,49 @@
-# Yichen Ge’s personal homepage
+# Personal homepage
 
-Yichen Ge’s academic website, built with Jekyll and hosted on GitHub Pages.
-
-## Publications
-
-Add publication entries as Markdown files in `_publications/`.
-
-```yaml
----
-title: "Paper title"
-category: conferences # manuscripts for journal articles
-date: 2026-01-18
-venue: "Conference or journal"
-authors: # optional, in the paper's author order
-  - name: "Author One"
-  - name: "Yichen Ge"
-    marker: "*"
-  - name: "Author Three"
-author_note: "* Corresponding author." # optional
-presentation: "Oral" # optional
-paperurl: "https://example.com/paper" # optional
-codeurl: "https://github.com/username/project" # optional
----
-```
-
-Only nonempty `paperurl` and `codeurl` values produce **Paper** and **Code**
-buttons. Omit these fields or leave them blank to hide the corresponding button.
-An optional `projecturl: /MADM/` makes a paper’s title link to its standalone
-project page. Papers are sorted newest first within their category.
+A static academic website, hosted on GitHub Pages.
 
 ## Local preview
 
 ```sh
-bundle install
-bundle exec jekyll serve
+python3 -m http.server 4000
 ```
 
-Shared styles live in `assets/css/academic.css`; homepage content lives in
-`_pages/about.md`. Navigation is configured in `_data/navigation.yml`.
+Open <http://localhost:4000/>. On Windows, use `python -m http.server 4000`
+if the Python executable is named `python`.
 
-Based on [AcademicPages](https://github.com/academicpages/academicpages.github.io).
+## Editing
+
+- Homepage: `index.html`
+- Publications: the `#publications` section in `index.html`
+- Shared styles: `assets/css/academic.css`
+- Shared scripts: `assets/js/academic.js`
+
+Edit the HTML directly and refresh the browser. Navigation and profile markup
+are included in each page.
+
+## Publications
+
+Edit or duplicate a `.publication-card` article in `index.html`.
+Its title, authors, venue, and contribution notes are ordinary HTML. List papers
+in the desired display order.
+
+The optional resource buttons use these attributes on the article:
+
+```html
+<article class="paper-box publication-card paper-box--text-only"
+         id="paper-id"
+         data-paper-url="https://example.com/paper.pdf"
+         data-code-url="https://github.com/username/project">
+  <!-- Title, authors, venue, and contribution notes -->
+</article>
+```
+
+Leave `data-paper-url` or `data-code-url` empty to hide the corresponding
+**Paper** or **Code** button. Links are updated automatically by the browser.
+
+## Hosting
+
+Publish the repository root as static files on GitHub Pages. Keep `.nojekyll`
+at the root. Pages, styles, scripts, images, and fonts are served directly.
+
+Third-party style licenses are included in `assets/css/`.
