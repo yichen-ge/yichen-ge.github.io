@@ -1,4 +1,9 @@
-# Only pages listed here appear in the main navigation.
 main:
+  - title: "Home"
+    url: /
   - title: "Publications"
     url: /publications/
+  - title: "Experience"
+    url: /#education-heading
+  - title: "Service"
+    url: /#service-heading

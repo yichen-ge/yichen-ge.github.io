@@ -1,5 +1,4 @@
 <article class="publication-card" id="{{ include.paper.slug }}" aria-labelledby="paper-{{ include.paper.slug }}" itemscope itemtype="https://schema.org/ScholarlyArticle">
-  {% include publication-meta.html paper=include.paper %}
   <h3 class="publication-title" id="paper-{{ include.paper.slug }}" itemprop="headline">{% if include.paper.projecturl and include.paper.projecturl != empty %}<a href="{{ include.paper.projecturl | relative_url }}">{{ include.paper.title }} <span class="title-arrow" aria-hidden="true">↗</span></a>{% else %}{{ include.paper.title }}{% endif %}</h3>
   {% if include.paper.authors and include.paper.authors != empty %}
     <p class="publication-authors">
@@ -8,6 +7,7 @@
       {%- endfor -%}
     </p>
   {% endif %}
+  {% include publication-meta.html paper=include.paper %}
   {% if include.paper.author_note %}<p class="publication-role">{{ include.paper.author_note | escape }}</p>{% endif %}
   {% include publication-links.html paper=include.paper %}
 </article>

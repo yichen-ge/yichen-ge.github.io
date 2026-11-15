@@ -1,13 +1,5 @@
-<div class="masthead">
-  <div class="masthead__inner-wrap">
-    <nav class="academic-nav" aria-label="Main navigation">
-      <a class="academic-nav__brand" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>{{ site.title }}</a>
-      <ul class="academic-nav__links">
-        {% for link in site.data.navigation.main %}
-          <li><a href="{{ link.url | relative_url }}"{% if page.url contains link.url %} aria-current="page"{% endif %}>{{ link.title }}</a></li>
-        {% endfor %}
-        <li><button id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false"><i id="theme-icon" class="fas fa-sun" aria-hidden="true"></i></button></li>
-      </ul>
-    </nav>
-  </div>
-</div>
+<nav class="academic-nav" aria-label="Main navigation">
+  {% for link in site.data.navigation.main %}
+    <a href="{{ link.url | relative_url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.title }}</a>
+  {% endfor %}
+</nav>

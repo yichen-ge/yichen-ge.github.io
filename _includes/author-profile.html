@@ -1,17 +1,16 @@
 {% assign author = site.author %}
 <div class="profile" itemscope itemtype="https://schema.org/Person">
   <a class="profile__portrait" href="{{ '/' | relative_url }}" aria-label="{{ author.name }} — home">
-    <img src="{{ author.avatar | prepend: '/images/' | relative_url }}" alt="{{ author.name }}" width="160" height="160" fetchpriority="high" itemprop="image">
+    <img src="{{ author.avatar | prepend: '/images/' | relative_url }}" alt="{{ author.name }}" width="250" height="312" fetchpriority="high" itemprop="image">
   </a>
   <div class="profile__identity">
-    <h2 class="profile__name" itemprop="name">{{ author.name }}</h2>
+    <p class="profile__name" itemprop="name">{{ author.name }}</p>
     <p class="profile__bio" itemprop="jobTitle">{{ author.bio }}</p>
     <p class="profile__affiliation" itemprop="affiliation">{{ author.employer }}</p>
-    <p class="profile__location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> {{ author.location }}</p>
   </div>
   <ul class="profile__links" aria-label="Academic profiles and contact">
-    {% if author.email %}<li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i> Email</a></li>{% endif %}
-    {% if author.googlescholar %}<li><a href="{{ author.googlescholar | escape }}"><i class="ai ai-google-scholar" aria-hidden="true"></i> Google Scholar</a></li>{% endif %}
-    {% if author.github %}<li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i> GitHub</a></li>{% endif %}
+    {% if author.email %}<li><a href="mailto:{{ author.email }}"><i class="fas fa-envelope" aria-hidden="true"></i><span>{{ author.email | escape | replace: '@', '@<wbr>' }}</span></a></li>{% endif %}
+    {% if author.googlescholar %}<li><a href="{{ author.googlescholar | escape }}"><i class="ai ai-google-scholar" aria-hidden="true"></i><span>Google Scholar</span></a></li>{% endif %}
+    {% if author.github %}<li><a href="https://github.com/{{ author.github }}"><i class="fab fa-github" aria-hidden="true"></i><span>GitHub</span></a></li>{% endif %}
   </ul>
 </div>

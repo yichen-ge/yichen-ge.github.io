@@ -1,33 +1,24 @@
 ---
 layout: compress
 ---
-
 {% include base_path %}
-
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
   <head>
     {% include head.html %}
     {% include head/custom.html %}
   </head>
-
-  <body class="academic-site">
-
+  <body class="academic-site {% if page.url == '/' %}with-news{% else %}without-news{% endif %}">
     <a class="skip-link" href="#main">Skip to content</a>
-
-    {% include browser-upgrade.html %}
-    {% include masthead.html %}
-
-    {{ content }}
-
-    <div class="page__footer">
-      <footer>
-        {% include footer/custom.html %}
-        {% include footer.html %}
-      </footer>
+    <div class="site-layout">
+      <aside class="profile-sidebar" aria-label="Profile">{% include author-profile.html %}</aside>
+      <div class="site-content">
+        {% include masthead.html %}
+        {{ content }}
+      </div>
+      {% if page.url == '/' %}{% include news-rail.html %}{% endif %}
     </div>
-
+    <div class="page__footer"><footer>{% include footer/custom.html %}{% include footer.html %}</footer></div>
     {% include scripts.html %}
-
   </body>
 </html>

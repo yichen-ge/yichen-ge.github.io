@@ -2,7 +2,7 @@
 layout: archive
 title: "Publications"
 permalink: /publications/
-author_profile: true
+author_profile: false
 ---
 
 <div class="publications-page">
@@ -16,9 +16,11 @@ author_profile: true
     {% if papers.size > 0 %}
       <section class="publication-group" aria-labelledby="{{ category[0] }}-heading">
         <h2 class="publication-group__heading" id="{{ category[0] }}-heading">{{ category[1].title }} <span class="paper-count">{{ papers.size }}</span></h2>
-        {% for paper in papers %}
-          {% include publication-card.html paper=paper %}
-        {% endfor %}
+        <ol class="publication-list">
+          {% for paper in papers %}
+            <li>{% include publication-card.html paper=paper %}</li>
+          {% endfor %}
+        </ol>
       </section>
     {% endif %}
   {% endfor %}
