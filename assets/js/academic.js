@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.publication-card').forEach(article => {
     const resources = [
       ['pdf', 'Paper', article.dataset.paperUrl?.trim(), 'fas fa-file-pdf'],
-      ['code', 'Code', article.dataset.codeUrl?.trim(), 'fab fa-github']
+      ['code', 'Code', article.dataset.codeUrl?.trim(), 'fab fa-github'],
+      ['project', 'Project Page', article.dataset.projectUrl?.trim(), 'fas fa-globe']
     ].filter(([, , url]) => url);
     let group = article.querySelector('.publication-links');
     if (!resources.length) { group?.remove(); return; }

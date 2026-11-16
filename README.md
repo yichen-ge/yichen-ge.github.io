@@ -33,13 +33,15 @@ The optional resource buttons use these attributes on the article:
 <article class="paper-box publication-card paper-box--text-only"
          id="paper-id"
          data-paper-url="https://example.com/paper.pdf"
-         data-code-url="https://github.com/username/project">
+         data-code-url="https://github.com/username/project"
+         data-project-url="https://example.com/project/">
   <!-- Title, authors, venue, and contribution notes -->
 </article>
 ```
 
-Leave `data-paper-url` or `data-code-url` empty to hide the corresponding
-**Paper** or **Code** button. Links are updated automatically by the browser.
+Use `data-paper-url`, `data-code-url`, and `data-project-url` for the **Paper**,
+**Code**, and **Project Page** buttons. Leave any attribute empty or omit it to
+hide that button. Links are updated automatically by the browser.
 
 ## Hosting
 
